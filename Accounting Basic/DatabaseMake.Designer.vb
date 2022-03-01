@@ -24,11 +24,13 @@ Partial Class DatabaseMake
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.CompanyName = New System.Windows.Forms.TextBox()
         Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.AutoDbName = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -50,12 +52,12 @@ Partial Class DatabaseMake
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "You did not have any Database. Enter your detail to make one."
         '
-        'TextBox1
+        'CompanyName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 71)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(502, 23)
-        Me.TextBox1.TabIndex = 2
+        Me.CompanyName.Location = New System.Drawing.Point(12, 71)
+        Me.CompanyName.Name = "CompanyName"
+        Me.CompanyName.Size = New System.Drawing.Size(502, 23)
+        Me.CompanyName.TabIndex = 2
         '
         'CheckedListBox1
         '
@@ -78,7 +80,7 @@ Partial Class DatabaseMake
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 330)
+        Me.Label4.Location = New System.Drawing.Point(12, 376)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(264, 15)
         Me.Label4.TabIndex = 5
@@ -93,17 +95,35 @@ Partial Class DatabaseMake
         Me.Button1.Text = "Create"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'AutoDbName
+        '
+        Me.AutoDbName.Location = New System.Drawing.Point(12, 120)
+        Me.AutoDbName.Name = "AutoDbName"
+        Me.AutoDbName.Size = New System.Drawing.Size(178, 23)
+        Me.AutoDbName.TabIndex = 7
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(12, 102)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(246, 15)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Database will automatically named as below :"
+        '
         'DatabaseMake
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(557, 450)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.AutoDbName)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CheckedListBox1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.CompanyName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "DatabaseMake"
@@ -115,9 +135,11 @@ Partial Class DatabaseMake
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents CompanyName As TextBox
     Friend WithEvents CheckedListBox1 As CheckedListBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents AutoDbName As TextBox
+    Friend WithEvents Label5 As Label
 End Class
