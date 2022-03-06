@@ -22,7 +22,16 @@ Public Class MainForm
             Initiate.createDatabase()
         End If
         Return
+
     End Sub
+    ''================================================================================================
+    ''refresh 
+    Public Sub refreshAlldatagrid()
+        '' UpdateTable(ds)
+        ''rebind the DGV
+        ''  dgv_items.DataSource = GetData()
+    End Sub
+
     Public Sub MainformShow() Handles MyBase.Shown
         Dim str As String = "Data Source=C:\Account Basic\ACCOUNTBOOK.db"
         Dim strSQL As String
@@ -40,6 +49,8 @@ Public Class MainForm
             DatabaseMake.Show()
         End If
         Timer1.Start()
+        Main_Page_Inventory()
+        Main_Page_Supplier()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -56,46 +67,57 @@ Public Class MainForm
     ''=======================================================================================================================
     ''========================== MAIN PAGE INVENTORY + SUPPLIER VIEW =========================================================================
 
-    Public Sub Main_Page_InventorySupplier()
+    Public Sub Main_Page_Inventory()
         ''INVENTORY======================================================================================================
-        Using SLITECONNECTION_M As New SQLiteConnection(ConnectionSTR)
-            Using SLITECOMMAND As New SQLiteCommand("Select  Item_Id, Code, ProductName, Company_Id, Quantity, UnitPrice, UnitTax from Inventory")
-                Using DTA As New SQLiteDataAdapter
+        Using SLITECONNECTION_M As SQLiteConnection = New SQLiteConnection(ConnectionSTR)
+            Using SLITECOMMAND As SQLiteCommand = New SQLiteCommand("Select Code, ProductName, Company_Id, Quantity, UnitPrice from Inventory", SLITECONNECTION_M)
+                SLITECOMMAND.CommandType = CommandType.Text
+                Using DTA As SQLiteDataAdapter = New SQLiteDataAdapter(SLITECOMMAND)
                     Using DATATABLE As New DataTable
-                        SLITECONNECTION_M.Open()
-                        SLITECOMMAND.ExecuteNonQuery()
-                        DTA.Fill(DATATABLE)
-                        DataGrid_Main_Inventory.DataSource = DATATABLE
-                    End Using
-                End Using
-            End Using
-        End Using
+                        Try
+                            DTA.Fill(DATATABLE)
+                            DataGrid_Main_Inventory.DataSource = DATATABLE
+                        Catch ex As Exception
 
-        ''SUPPLIER=======================================================================================================
-        Using SLITECONNECTION_M As New SQLiteConnection(ConnectionSTR)
-            Using SLITECOMMAND As New SQLiteCommand("Select Company_Id, Registration, CompanyName, CompanyTelephone From Supplier")
-                Using DTA As New SQLiteDataAdapter
-                    Using DATATABLE As New DataTable
-                        SLITECONNECTION_M.Open()
-                        SLITECOMMAND.ExecuteNonQuery()
-                        DTA.Fill(DATATABLE)
-                        DataGrid_Main_Supplier.DataSource = DATATABLE
+                        End Try
+
+
+
                     End Using
                 End Using
             End Using
         End Using
     End Sub
 
+    Public Sub Main_Page_Supplier()
+        ''SUPPLIER=======================================================================================================
+        Using SLITECONNECTION_M As SQLiteConnection = New SQLiteConnection(ConnectionSTR)
+            Using SLITECOMMAND As SQLiteCommand = New SQLiteCommand("Select Company_Id, CompanyName, CompanyTelephone From Supplier", SLITECONNECTION_M)
+                SLITECOMMAND.CommandType = CommandType.Text
+                Using DTA As SQLiteDataAdapter = New SQLiteDataAdapter(SLITECOMMAND)
+                    Using DATATABLE As New DataTable
+                        Try
+                            DTA.Fill(DATATABLE)
+                            DataGrid_Main_Supplier.DataSource = DATATABLE
+                        Catch ex As Exception
+                        End Try
 
+                    End Using
+                End Using
+            End Using
+        End Using
+    End Sub
     ''=====================================================================================================================================
     ''========================== MAIN PAGE INVENTORY + SUPPLIER VIEW CODE END==============================================================
-
-
-    ''=====================================================================================================================================
-    ''========================== INVENTORY CONTROL CODE ===================================================================================
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Add_Inventory.Show()
     End Sub
+    Private Sub Supplier_add_supplier_Click(sender As Object, e As EventArgs) Handles Supplier_add_supplier.Click
+        Add_Supplier.Show()
+    End Sub
+
+    ''=====================================================================================================================================
+    ''========================== INVENTORY CONTROL CODE ===================================================================================
     Private Sub TabPage_updateItem_Click(sender As Object, e As EventArgs) Handles TabPage_updateItem.GotFocus
         DGV_Inventory_Update.AllowUserToAddRows = False
 
@@ -321,11 +343,6 @@ Public Class MainForm
             da.Dispose()
         End Try
     End Sub
-
-
-
-
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         DatabaseMake.Show()
     End Sub

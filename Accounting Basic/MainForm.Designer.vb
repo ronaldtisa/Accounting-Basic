@@ -23,7 +23,17 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
+        Me.DataGrid_Main_Supplier = New System.Windows.Forms.DataGridView()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CashFLOW = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGrid_Main_Inventory = New System.Windows.Forms.DataGridView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -38,7 +48,6 @@ Partial Class MainForm
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DataGrid_Main_Supplier = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel11 = New System.Windows.Forms.Panel()
@@ -87,7 +96,7 @@ Partial Class MainForm
         Me.TabPage11 = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.DGV_Supplier_Add = New System.Windows.Forms.DataGridView()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Supplier_add_supplier = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.TabPage12 = New System.Windows.Forms.TabPage()
@@ -130,13 +139,16 @@ Partial Class MainForm
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Time_stat = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.CompanyName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Company_Main_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Registration_supplier_main = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DataGrid_Main_Supplier, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGrid_Main_Inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGrid_Main_Supplier, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.w.SuspendLayout()
@@ -176,12 +188,83 @@ Partial Class MainForm
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
+        'DataGrid_Main_Supplier
+        '
+        Me.DataGrid_Main_Supplier.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_Main_Supplier.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGrid_Main_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGrid_Main_Supplier.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column5, Me.Column7, Me.CashFLOW})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_Main_Supplier.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGrid_Main_Supplier.Location = New System.Drawing.Point(6, 40)
+        Me.DataGrid_Main_Supplier.Name = "DataGrid_Main_Supplier"
+        Me.DataGrid_Main_Supplier.RowTemplate.Height = 25
+        Me.DataGrid_Main_Supplier.Size = New System.Drawing.Size(469, 379)
+        Me.DataGrid_Main_Supplier.TabIndex = 0
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "Company_Id"
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column3.HeaderText = "Company ID"
+        Me.Column3.Name = "Column3"
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "CompanyName"
+        Me.Column5.HeaderText = "Company Name"
+        Me.Column5.Name = "Column5"
+        '
+        'Column7
+        '
+        Me.Column7.DataPropertyName = "CompanyTelephone"
+        Me.Column7.HeaderText = "Telephone"
+        Me.Column7.Name = "Column7"
+        '
+        'CashFLOW
+        '
+        Me.CashFLOW.DataPropertyName = "CashFLOW"
+        Me.CashFLOW.HeaderText = "Credit"
+        Me.CashFLOW.Name = "CashFLOW"
+        '
         'DataGrid_Main_Inventory
         '
         Me.DataGrid_Main_Inventory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_Main_Inventory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGrid_Main_Inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_Main_Inventory.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGrid_Main_Inventory.Location = New System.Drawing.Point(6, 40)
         Me.DataGrid_Main_Inventory.Name = "DataGrid_Main_Inventory"
         Me.DataGrid_Main_Inventory.RowTemplate.Height = 25
@@ -335,18 +418,6 @@ Partial Class MainForm
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "SUPPLIER"
-        '
-        'DataGrid_Main_Supplier
-        '
-        Me.DataGrid_Main_Supplier.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGrid_Main_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGrid_Main_Supplier.Location = New System.Drawing.Point(6, 40)
-        Me.DataGrid_Main_Supplier.Name = "DataGrid_Main_Supplier"
-        Me.DataGrid_Main_Supplier.RowTemplate.Height = 25
-        Me.DataGrid_Main_Supplier.Size = New System.Drawing.Size(469, 379)
-        Me.DataGrid_Main_Supplier.TabIndex = 0
         '
         'GroupBox1
         '
@@ -778,7 +849,7 @@ Partial Class MainForm
         Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.DGV_Supplier_Add)
-        Me.Panel6.Controls.Add(Me.Button10)
+        Me.Panel6.Controls.Add(Me.Supplier_add_supplier)
         Me.Panel6.Controls.Add(Me.Label7)
         Me.Panel6.Controls.Add(Me.Button15)
         Me.Panel6.Location = New System.Drawing.Point(6, 6)
@@ -795,14 +866,14 @@ Partial Class MainForm
         Me.DGV_Supplier_Add.Size = New System.Drawing.Size(1140, 388)
         Me.DGV_Supplier_Add.TabIndex = 14
         '
-        'Button10
+        'Supplier_add_supplier
         '
-        Me.Button10.Location = New System.Drawing.Point(514, 421)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(120, 27)
-        Me.Button10.TabIndex = 13
-        Me.Button10.Text = "Save Database"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.Supplier_add_supplier.Location = New System.Drawing.Point(514, 421)
+        Me.Supplier_add_supplier.Name = "Supplier_add_supplier"
+        Me.Supplier_add_supplier.Size = New System.Drawing.Size(120, 27)
+        Me.Supplier_add_supplier.TabIndex = 13
+        Me.Supplier_add_supplier.Text = "Add Supplier"
+        Me.Supplier_add_supplier.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -1189,6 +1260,24 @@ Partial Class MainForm
         'Timer1
         '
         '
+        'CompanyName
+        '
+        Me.CompanyName.DataPropertyName = "CompanyName"
+        Me.CompanyName.HeaderText = "Company Name"
+        Me.CompanyName.Name = "CompanyName"
+        '
+        'Company_Main_id
+        '
+        Me.Company_Main_id.DataPropertyName = "Company_Id"
+        Me.Company_Main_id.HeaderText = "Company ID"
+        Me.Company_Main_id.Name = "Company_Main_id"
+        '
+        'Registration_supplier_main
+        '
+        Me.Registration_supplier_main.DataPropertyName = "Registration"
+        Me.Registration_supplier_main.HeaderText = "Registration No."
+        Me.Registration_supplier_main.Name = "Registration_supplier_main"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -1202,6 +1291,7 @@ Partial Class MainForm
         Me.DoubleBuffered = True
         Me.Name = "MainForm"
         Me.Text = "MainForm"
+        CType(Me.DataGrid_Main_Supplier, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGrid_Main_Inventory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -1209,7 +1299,6 @@ Partial Class MainForm
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        CType(Me.DataGrid_Main_Supplier, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.w.ResumeLayout(False)
@@ -1297,7 +1386,7 @@ Partial Class MainForm
     Friend WithEvents Button14 As Button
     Friend WithEvents Button11 As Button
     Friend WithEvents Button13 As Button
-    Friend WithEvents Button10 As Button
+    Friend WithEvents Supplier_add_supplier As Button
     Friend WithEvents Button15 As Button
     Friend WithEvents w As TabControl
     Friend WithEvents TabPage_addItem As TabPage
@@ -1374,5 +1463,12 @@ Partial Class MainForm
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Time_stat As ToolStripStatusLabel
+    Friend WithEvents CompanyName As DataGridViewTextBoxColumn
+    Friend WithEvents Company_Main_id As DataGridViewTextBoxColumn
+    Friend WithEvents Registration_supplier_main As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents CashFLOW As DataGridViewTextBoxColumn
     Public Property Red As Color
 End Class
