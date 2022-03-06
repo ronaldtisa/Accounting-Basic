@@ -39,9 +39,13 @@ Public Class MainForm
             ' Table is empty
             DatabaseMake.Show()
         End If
+        Timer1.Start()
     End Sub
-    Public Sub Goload(sender As Object, e As EventArgs) Handles MyBase.Shown
 
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim Today As Object
+        Today = Now
+        Time_stat.Text = Format(Today, "dd / MMMM / yyyy h:mm:ss tt")
     End Sub
     Private Function duplicateDataBase(fullPath As String) As Boolean
         Return System.IO.File.Exists(fullPath)
@@ -92,11 +96,6 @@ Public Class MainForm
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Add_Inventory.Show()
     End Sub
-
-    Private Sub TabPage9_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub TabPage_updateItem_Click(sender As Object, e As EventArgs) Handles TabPage_updateItem.GotFocus
         DGV_Inventory_Update.AllowUserToAddRows = False
 
@@ -174,8 +173,6 @@ Public Class MainForm
             End If
         End If
     End Sub
-
-
     Private Sub TabPage_deleteItem_Click(sender As Object, e As EventArgs) Handles TabPage_deleteItem.GotFocus
         DGV_Inventory_Update.AllowUserToAddRows = False
 
@@ -235,8 +232,7 @@ Public Class MainForm
         buttonColumn.UseColumnTextForButtonValue = True
         DGV_Inventory_Update.Columns.Insert(4, buttonColumn)
     End Sub
-
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Inventory_Delete.CellContentClick
         If e.ColumnIndex = 3 Then
             Dim row As DataGridViewRow = DGV_Inventory_Update.Rows(e.RowIndex)
             If MessageBox.Show(String.Format("Do you want to delete Customer ID: {0}", row.Cells("CustomerId").Value), "Confirmation", MessageBoxButtons.YesNo) = DialogResult.Yes Then
@@ -261,11 +257,47 @@ Public Class MainForm
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles inventory_update_search_itemcode.TextChanged
         sql = "SELECT * FROM Inventory WHERE Code LIKE '%" & inventory_update_search_itemcode.Text & "%'"
         searchData(sql, DGV_Inventory_Update)
-    End Sub
+        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
+        buttonColumn.HeaderText = ""
+        buttonColumn.Width = 60
+        buttonColumn.Name = "Updatebutton"
+        buttonColumn.Text = "Update"
 
+        buttonColumn.UseColumnTextForButtonValue = True
+        DGV_Inventory_Update.Columns.Insert(4, buttonColumn)
+    End Sub
     Private Sub inventory_update_search_ItemName_TextChanged(sender As Object, e As EventArgs) Handles inventory_update_search_ItemName.TextChanged
         sql = "SELECT * FROM Inventory WHERE ProductName LIKE '%" & inventory_update_search_ItemName.Text & "%'"
         searchData(sql, DGV_Inventory_Update)
+        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
+        buttonColumn.HeaderText = ""
+        buttonColumn.Width = 60
+        buttonColumn.Name = "buttonColumn"
+        buttonColumn.Text = "Update"
+        buttonColumn.UseColumnTextForButtonValue = True
+        DGV_Inventory_Update.Columns.Insert(4, buttonColumn)
+    End Sub
+    Private Sub inventory_delete_search_ItemCode_TextChanged(sender As Object, e As EventArgs) Handles inventory_delete_search_ItemCode.TextChanged
+        sql = "SELECT * FROM Inventory WHERE Code LIKE '%" & inventory_delete_search_ItemCode.Text & "%'"
+        searchData(sql, DGV_Inventory_Delete)
+        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
+        buttonColumn.HeaderText = ""
+        buttonColumn.Width = 60
+        buttonColumn.Name = "buttonColumn"
+        buttonColumn.Text = "Delete"
+        buttonColumn.UseColumnTextForButtonValue = True
+        DGV_Inventory_Delete.Columns.Insert(4, buttonColumn)
+    End Sub
+    Private Sub inventory_delete_search_ItemName_TextChanged(sender As Object, e As EventArgs) Handles inventory_delete_search_ItemName.TextChanged
+        sql = "SELECT * FROM Inventory WHERE ProductName LIKE '%" & inventory_delete_search_ItemName.Text & "%'"
+        searchData(sql, DGV_Inventory_Delete)
+        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
+        buttonColumn.HeaderText = ""
+        buttonColumn.Width = 60
+        buttonColumn.Name = "buttonColumn"
+        buttonColumn.Text = "Delete"
+        buttonColumn.UseColumnTextForButtonValue = True
+        DGV_Inventory_Delete.Columns.Insert(4, buttonColumn)
     End Sub
     Private Sub searchData(sql As String, dtg As DataGridView)
         Try
@@ -294,48 +326,96 @@ Public Class MainForm
 
 
 
-    Dim conrow As SQLiteConnection = New SQLiteConnection(ConnectionSTR)
-    Dim cmdrow As SQLiteCommand
-    Dim darow As SQLiteDataAdapter
-    Dim dtrow As DataTable
-    Dim sqlrow As String
-    Private Sub searchresult_CellClick(sender As Object, e As DataGridViewCellEventArgs)
-
-        ''    Sql = "SELECT * FROM Inventory WHERE Code LIKE '%" & search_delete_btn.Text & "%' OR ProductName LIKE '%" & search_delete_btn.Text & "%'"
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        DatabaseMake.Show()
     End Sub
-    Private Sub searchgrid_select(sql As String, dtg As DataGridView)
-        Try
-            conrow.Open()
-            cmdrow = New SQLiteCommand()
-            darow = New SQLiteDataAdapter
-            dtrow = New DataTable
-            With cmdrow
-                .Connection = conrow
-                .CommandText = sqlrow
-            End With
-            With darow
-                .SelectCommand = cmdrow
-                .Fill(dtrow)
-            End With
-            dtg.DataSource = dtrow
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            conrow.Close()
-            darow.Dispose()
-        End Try
-    End Sub
-
-
-    ''================== End====================================================================
-    ''==========================================================================================
-
-
-
 
     ''=====================================================================================================================================
     ''========================== INVENTORY CONTROL CODE END================================================================================
+
+    ''=====================================================================================================================================
+    ''========================== SUPPLIER CONTROL CODE START================================================================================
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txtbx_supplier_update.TextChanged
+        sql = "SELECT * FROM Supplier WHERE CompanyName LIKE '%" & txtbx_supplier_update.Text & "%'"
+        search_update_supplier(sql, DGV_Supplier_Update)
+
+    End Sub
+    Private Sub search_update_supplier(sql As String, dtg As DataGridView)
+        Try
+            con.Open()
+            cmd = New SQLiteCommand()
+            da = New SQLiteDataAdapter
+            dt = New DataTable
+            With cmd
+                .Connection = con
+                .CommandText = sql
+            End With
+            With da
+                .SelectCommand = cmd
+                .Fill(dt)
+            End With
+            dtg.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            con.Close()
+            da.Dispose()
+        End Try
+
+        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
+        buttonColumn.HeaderText = ""
+        buttonColumn.Width = 60
+        buttonColumn.Name = "buttonColumn"
+        buttonColumn.Text = "Delete"
+        buttonColumn.UseColumnTextForButtonValue = True
+        buttonColumn.DataPropertyName = "buttonColumn"
+        DGV_Supplier_Update.Columns.Insert(0, buttonColumn)
+        da.Dispose()
+    End Sub
+
+    Private Sub txtbx_supplier_delete_TextChanged(sender As Object, e As EventArgs) Handles txtbx_supplier_delete.TextChanged
+        sql = "SELECT * FROM Supplier WHERE CompanyName LIKE '%" & txtbx_supplier_update.Text & "%'"
+        search_delete_supplier(sql, DGV_Supplier_Delete)
+        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
+        buttonColumn.HeaderText = ""
+        buttonColumn.Width = 60
+        buttonColumn.Name = "buttonColumn"
+        buttonColumn.Text = "Delete"
+        buttonColumn.UseColumnTextForButtonValue = True
+        DGV_Supplier_Delete.Columns.Insert(0, buttonColumn)
+    End Sub
+    Private Sub search_delete_supplier(sql As String, dtg As DataGridView)
+        Try
+            con.Open()
+            cmd = New SQLiteCommand()
+            da = New SQLiteDataAdapter
+            dt = New DataTable
+            With cmd
+                .Connection = con
+                .CommandText = sql
+            End With
+            With da
+                .SelectCommand = cmd
+                .Fill(dt)
+            End With
+            dtg.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            con.Close()
+            da.Dispose()
+        End Try
+
+        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
+        buttonColumn.HeaderText = ""
+        buttonColumn.Width = 60
+        buttonColumn.Name = "buttonColumn"
+        buttonColumn.Text = "Delete"
+        buttonColumn.UseColumnTextForButtonValue = True
+        buttonColumn.DataPropertyName = "buttonColumn"
+        DGV_Supplier_Update.Columns.Insert(0, buttonColumn)
+        da.Dispose()
+    End Sub
 
 
 End Class
