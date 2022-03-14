@@ -23,10 +23,10 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.InventoryControl_tab1 = New System.Windows.Forms.TabControl()
@@ -46,6 +46,16 @@ Partial Class MainForm
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.inventory_update_search_itemcode = New System.Windows.Forms.TextBox()
         Me.DGV_Inventory_Update = New System.Windows.Forms.DataGridView()
+        Me.Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Company_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnitPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Item_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnitTax = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Update = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TabPage_deleteItem = New System.Windows.Forms.TabPage()
@@ -136,16 +146,6 @@ Partial Class MainForm
         Me.CompanyName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Company_Main_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Registration_supplier_main = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Company_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnitPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Item_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnitTax = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Update = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.InventoryControl_tab1.SuspendLayout()
@@ -269,6 +269,7 @@ Partial Class MainForm
         Me.DataGrid_Main_Inventory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGrid_Main_Inventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGrid_Main_Inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGrid_Main_Inventory.Location = New System.Drawing.Point(6, 91)
         Me.DataGrid_Main_Inventory.Name = "DataGrid_Main_Inventory"
@@ -399,6 +400,89 @@ Partial Class MainForm
         Me.DGV_Inventory_Update.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_Inventory_Update.Size = New System.Drawing.Size(900, 322)
         Me.DGV_Inventory_Update.TabIndex = 7
+        '
+        'Code
+        '
+        Me.Code.DataPropertyName = "Code"
+        Me.Code.FillWeight = 77.36041!
+        Me.Code.HeaderText = "Item Code"
+        Me.Code.Name = "Code"
+        '
+        'Telephone
+        '
+        Me.Telephone.DataPropertyName = "Telephone"
+        Me.Telephone.HeaderText = "Telephone"
+        Me.Telephone.Name = "Telephone"
+        Me.Telephone.Visible = False
+        '
+        'ProductName
+        '
+        Me.ProductName.DataPropertyName = "ProductName"
+        Me.ProductName.FillWeight = 77.36041!
+        Me.ProductName.HeaderText = "Product Name"
+        Me.ProductName.Name = "ProductName"
+        '
+        'Company_Id
+        '
+        Me.Company_Id.DataPropertyName = "Company_Id"
+        Me.Company_Id.FillWeight = 77.36041!
+        Me.Company_Id.HeaderText = "Company ID"
+        Me.Company_Id.Name = "Company_Id"
+        '
+        'Quantity
+        '
+        Me.Quantity.DataPropertyName = "Quantity"
+        Me.Quantity.FillWeight = 77.36041!
+        Me.Quantity.HeaderText = "Stock"
+        Me.Quantity.Name = "Quantity"
+        '
+        'UnitPrice
+        '
+        Me.UnitPrice.DataPropertyName = "UnitPrice"
+        Me.UnitPrice.FillWeight = 77.36041!
+        Me.UnitPrice.HeaderText = "Unit Price"
+        Me.UnitPrice.Name = "UnitPrice"
+        '
+        'Item_Id
+        '
+        Me.Item_Id.DataPropertyName = "Item_Id"
+        Me.Item_Id.HeaderText = "Item ID"
+        Me.Item_Id.Name = "Item_Id"
+        Me.Item_Id.Visible = False
+        '
+        'Address
+        '
+        Me.Address.DataPropertyName = "Address"
+        Me.Address.HeaderText = "Address"
+        Me.Address.Name = "Address"
+        Me.Address.Visible = False
+        '
+        'UnitTax
+        '
+        Me.UnitTax.DataPropertyName = "UnitTax"
+        Me.UnitTax.HeaderText = "Unit Tax"
+        Me.UnitTax.Name = "UnitTax"
+        Me.UnitTax.Visible = False
+        '
+        'Update
+        '
+        Me.Update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.Update.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Update.FillWeight = 213.198!
+        Me.Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Update.HeaderText = ""
+        Me.Update.Name = "Update"
+        Me.Update.ReadOnly = True
+        Me.Update.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Update.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Update.Text = "View"
+        Me.Update.ToolTipText = "Load view form for further editing"
+        Me.Update.UseColumnTextForButtonValue = True
+        Me.Update.Width = 70
         '
         'Button9
         '
@@ -678,9 +762,9 @@ Partial Class MainForm
         Me.GroupBox2.Controls.Add(Me.DataGrid_Main_Supplier)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 60)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(900, 445)
+        Me.GroupBox2.Size = New System.Drawing.Size(900, 388)
         Me.GroupBox2.TabIndex = 15
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "SUPPLIER"
@@ -690,12 +774,13 @@ Partial Class MainForm
         Me.DataGrid_Main_Supplier.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGrid_Main_Supplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGrid_Main_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGrid_Main_Supplier.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column5, Me.Column7, Me.CashFLOW})
         Me.DataGrid_Main_Supplier.Location = New System.Drawing.Point(6, 18)
         Me.DataGrid_Main_Supplier.Name = "DataGrid_Main_Supplier"
         Me.DataGrid_Main_Supplier.RowTemplate.Height = 25
-        Me.DataGrid_Main_Supplier.Size = New System.Drawing.Size(888, 421)
+        Me.DataGrid_Main_Supplier.Size = New System.Drawing.Size(888, 364)
         Me.DataGrid_Main_Supplier.TabIndex = 0
         '
         'Column3
@@ -728,16 +813,16 @@ Partial Class MainForm
         '
         Me.GroupBox13.Controls.Add(Me.Supplier_add_supplier)
         Me.GroupBox13.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox13.Location = New System.Drawing.Point(947, 3)
+        Me.GroupBox13.Location = New System.Drawing.Point(9, 3)
         Me.GroupBox13.Name = "GroupBox13"
-        Me.GroupBox13.Size = New System.Drawing.Size(196, 300)
+        Me.GroupBox13.Size = New System.Drawing.Size(445, 51)
         Me.GroupBox13.TabIndex = 14
         Me.GroupBox13.TabStop = False
         Me.GroupBox13.Text = "GroupBox13"
         '
         'Supplier_add_supplier
         '
-        Me.Supplier_add_supplier.Location = New System.Drawing.Point(43, 30)
+        Me.Supplier_add_supplier.Location = New System.Drawing.Point(6, 18)
         Me.Supplier_add_supplier.Name = "Supplier_add_supplier"
         Me.Supplier_add_supplier.Size = New System.Drawing.Size(120, 27)
         Me.Supplier_add_supplier.TabIndex = 13
@@ -1236,89 +1321,6 @@ Partial Class MainForm
         Me.Registration_supplier_main.DataPropertyName = "Registration"
         Me.Registration_supplier_main.HeaderText = "Registration No."
         Me.Registration_supplier_main.Name = "Registration_supplier_main"
-        '
-        'Code
-        '
-        Me.Code.DataPropertyName = "Code"
-        Me.Code.FillWeight = 77.36041!
-        Me.Code.HeaderText = "Item Code"
-        Me.Code.Name = "Code"
-        '
-        'Telephone
-        '
-        Me.Telephone.DataPropertyName = "Telephone"
-        Me.Telephone.HeaderText = "Telephone"
-        Me.Telephone.Name = "Telephone"
-        Me.Telephone.Visible = False
-        '
-        'ProductName
-        '
-        Me.ProductName.DataPropertyName = "ProductName"
-        Me.ProductName.FillWeight = 77.36041!
-        Me.ProductName.HeaderText = "Product Name"
-        Me.ProductName.Name = "ProductName"
-        '
-        'Company_Id
-        '
-        Me.Company_Id.DataPropertyName = "Company_Id"
-        Me.Company_Id.FillWeight = 77.36041!
-        Me.Company_Id.HeaderText = "Company ID"
-        Me.Company_Id.Name = "Company_Id"
-        '
-        'Quantity
-        '
-        Me.Quantity.DataPropertyName = "Quantity"
-        Me.Quantity.FillWeight = 77.36041!
-        Me.Quantity.HeaderText = "Stock"
-        Me.Quantity.Name = "Quantity"
-        '
-        'UnitPrice
-        '
-        Me.UnitPrice.DataPropertyName = "UnitPrice"
-        Me.UnitPrice.FillWeight = 77.36041!
-        Me.UnitPrice.HeaderText = "Unit Price"
-        Me.UnitPrice.Name = "UnitPrice"
-        '
-        'Item_Id
-        '
-        Me.Item_Id.DataPropertyName = "Item_Id"
-        Me.Item_Id.HeaderText = "Item ID"
-        Me.Item_Id.Name = "Item_Id"
-        Me.Item_Id.Visible = False
-        '
-        'Address
-        '
-        Me.Address.DataPropertyName = "Address"
-        Me.Address.HeaderText = "Address"
-        Me.Address.Name = "Address"
-        Me.Address.Visible = False
-        '
-        'UnitTax
-        '
-        Me.UnitTax.DataPropertyName = "UnitTax"
-        Me.UnitTax.HeaderText = "Unit Tax"
-        Me.UnitTax.Name = "UnitTax"
-        Me.UnitTax.Visible = False
-        '
-        'Update
-        '
-        Me.Update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Update.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Update.FillWeight = 213.198!
-        Me.Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Update.HeaderText = ""
-        Me.Update.Name = "Update"
-        Me.Update.ReadOnly = True
-        Me.Update.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Update.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Update.Text = "View"
-        Me.Update.ToolTipText = "Load view form for further editing"
-        Me.Update.UseColumnTextForButtonValue = True
-        Me.Update.Width = 70
         '
         'MainForm
         '

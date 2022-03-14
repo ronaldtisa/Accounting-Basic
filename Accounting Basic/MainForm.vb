@@ -392,7 +392,23 @@ Public Class MainForm
 
 
 
-    Private Sub InventoryControl_tab1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InventoryControl_tab1.SelectedIndexChanged
+    Private Sub InventoryControl_tab1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InventoryControl_tab1.SelectedIndexChanged, InventoryControl_tab1.Enter
+        If InventoryControl_tab1.SelectedTab Is InventoryControl_tab1.TabPages("TabPage_addItem") Then
+            Using con As New SQLiteConnection(ConnectionSTR)
+                Using com As New SQLiteCommand("Select Code, ProductName, Company_Id, Quantity, UnitPrice, UnitTax from Inventory", con)
+                    com.CommandType = CommandType.Text
+                    Using da As New SQLiteDataAdapter(com)
+                        Using dtIn As New DataTable
+                            con.Open()
+                            com.ExecuteNonQuery()
+                            da.Fill(dtIn)
+                            DataGrid_Main_Inventory.DataSource = dtIn
+
+                        End Using
+                    End Using
+                End Using
+            End Using
+        End If
         If InventoryControl_tab1.SelectedTab Is InventoryControl_tab1.TabPages("TabPage_updateItem") Then
 
         End If
@@ -400,11 +416,28 @@ Public Class MainForm
     End Sub
 
     Private Sub SupplierRecord_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SupplierRecord.SelectedIndexChanged
+        If SupplierRecord.SelectedTab Is SupplierRecord.TabPages("AddSupplier") Then
+            Using con As New SQLiteConnection(ConnectionSTR)
+                Using com As New SQLiteCommand("Select Company_Id, Registration, CompanyName, CompanyAddress, CompanyTelephone from Supplier", con)
+                    com.CommandType = CommandType.Text
+                    Using da As New SQLiteDataAdapter(com)
+                        Using dtIn As New DataTable
+                            con.Open()
+                            com.ExecuteNonQuery()
+                            da.Fill(dtIn)
+                            DataGrid_Main_Supplier.DataSource = dtIn
+
+                        End Using
+                    End Using
+                End Using
+            End Using
+        End If
+
         If SupplierRecord.SelectedTab Is SupplierRecord.TabPages("TabPage_UpdateSupplier") Then
 
-            If SupplierRecord.SelectedTab Is SupplierRecord.TabPages("TabPage_DeleteSuppler") Then
+        End If
 
-            End If
+        If SupplierRecord.SelectedTab Is SupplierRecord.TabPages("TabPage_DeleteSuppler") Then
 
         End If
     End Sub

@@ -24,7 +24,9 @@ Partial Class Add_Inventory
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox_Company_list = New System.Windows.Forms.ComboBox()
+        Me.TextBoxItemId = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.AddItem_ComboBox_Company_list = New System.Windows.Forms.ComboBox()
         Me.TextBox_Total_Unit = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -40,6 +42,8 @@ Partial Class Add_Inventory
         Me.TextBox_Address = New System.Windows.Forms.TextBox()
         Me.TextBox_ItemName = New System.Windows.Forms.TextBox()
         Me.TextBox_ItemCode = New System.Windows.Forms.TextBox()
+        Me.TextBoxtax = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,7 +60,11 @@ Partial Class Add_Inventory
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GroupBox1.Controls.Add(Me.ComboBox_Company_list)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.TextBoxtax)
+        Me.GroupBox1.Controls.Add(Me.TextBoxItemId)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.AddItem_ComboBox_Company_list)
         Me.GroupBox1.Controls.Add(Me.TextBox_Total_Unit)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -81,13 +89,30 @@ Partial Class Add_Inventory
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Enter New Item Details"
         '
-        'ComboBox_Company_list
+        'TextBoxItemId
         '
-        Me.ComboBox_Company_list.FormattingEnabled = True
-        Me.ComboBox_Company_list.Location = New System.Drawing.Point(151, 103)
-        Me.ComboBox_Company_list.Name = "ComboBox_Company_list"
-        Me.ComboBox_Company_list.Size = New System.Drawing.Size(569, 25)
-        Me.ComboBox_Company_list.TabIndex = 18
+        Me.TextBoxItemId.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxItemId.Location = New System.Drawing.Point(568, 41)
+        Me.TextBoxItemId.Name = "TextBoxItemId"
+        Me.TextBoxItemId.Size = New System.Drawing.Size(152, 25)
+        Me.TextBoxItemId.TabIndex = 20
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(509, 44)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(62, 17)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "Item ID :"
+        '
+        'AddItem_ComboBox_Company_list
+        '
+        Me.AddItem_ComboBox_Company_list.FormattingEnabled = True
+        Me.AddItem_ComboBox_Company_list.Location = New System.Drawing.Point(151, 103)
+        Me.AddItem_ComboBox_Company_list.Name = "AddItem_ComboBox_Company_list"
+        Me.AddItem_ComboBox_Company_list.Size = New System.Drawing.Size(352, 25)
+        Me.AddItem_ComboBox_Company_list.TabIndex = 18
         '
         'TextBox_Total_Unit
         '
@@ -109,9 +134,11 @@ Partial Class Add_Inventory
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(11, 263)
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.Location = New System.Drawing.Point(509, 108)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(92, 17)
+        Me.Label7.Size = New System.Drawing.Size(80, 15)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Company ID :"
         '
@@ -172,7 +199,7 @@ Partial Class Add_Inventory
         'TextBoxID
         '
         Me.TextBoxID.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxID.Location = New System.Drawing.Point(151, 260)
+        Me.TextBoxID.Location = New System.Drawing.Point(591, 103)
         Me.TextBoxID.Name = "TextBoxID"
         Me.TextBoxID.Size = New System.Drawing.Size(129, 25)
         Me.TextBoxID.TabIndex = 8
@@ -215,8 +242,25 @@ Partial Class Add_Inventory
         Me.TextBox_ItemCode.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBox_ItemCode.Location = New System.Drawing.Point(151, 41)
         Me.TextBox_ItemCode.Name = "TextBox_ItemCode"
-        Me.TextBox_ItemCode.Size = New System.Drawing.Size(569, 25)
+        Me.TextBox_ItemCode.Size = New System.Drawing.Size(352, 25)
         Me.TextBox_ItemCode.TabIndex = 1
+        '
+        'TextBoxtax
+        '
+        Me.TextBoxtax.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxtax.Location = New System.Drawing.Point(151, 260)
+        Me.TextBoxtax.Name = "TextBoxtax"
+        Me.TextBoxtax.Size = New System.Drawing.Size(206, 25)
+        Me.TextBoxtax.TabIndex = 21
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(10, 263)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(52, 17)
+        Me.Label10.TabIndex = 22
+        Me.Label10.Text = "Tax % :"
         '
         'Add_Inventory
         '
@@ -248,5 +292,9 @@ Partial Class Add_Inventory
     Friend WithEvents TextBox_Address As TextBox
     Friend WithEvents TextBox_ItemName As TextBox
     Friend WithEvents TextBox_ItemCode As TextBox
-    Friend WithEvents ComboBox_Company_list As ComboBox
+    Friend WithEvents AddItem_ComboBox_Company_list As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TextBoxItemId As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents TextBoxtax As TextBox
 End Class
