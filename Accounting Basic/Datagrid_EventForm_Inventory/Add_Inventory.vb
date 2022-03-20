@@ -45,7 +45,7 @@ Public Class Add_Inventory
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Using SLITECONNECTION_M As New SQLiteConnection(ConnectionSTR)
-            Using SLITECOMMAND As New SQLiteCommand("Insert Into Inventory (Item_Id, Code, ProductName, Company_Id, Quantity, UnitPrice, UnitTax) Values('" + TextBoxItemId.Text + "','" + TextBox_ItemCode.Text + "', '" + TextBox_ItemName.Text + "','" + AddItem_ComboBox_Company_list.Text + "','" + TextBox_Total_Unit.Text + "','" + TextBox_Unit_Price.Text + "','" + TextBoxtax.Text + "')", SLITECONNECTION_M)
+            Using SLITECOMMAND As New SQLiteCommand("Insert Into Inventory (Item_Id, Code, ProductName, Company_Id, Quantity, UnitPrice, UnitTax) Values('" + TextBoxItemId.Text + "','" + TextBox_ItemCode.Text + "', '" + TextBox_ItemName.Text + "','" + TextBoxID.Text + "','" + TextBox_Total_Unit.Text + "','" + TextBox_Unit_Price.Text + "','" + TextBoxtax.Text + "')", SLITECONNECTION_M)
                 SLITECONNECTION_M.Open()
                 Try
                     SLITECOMMAND.ExecuteNonQuery()

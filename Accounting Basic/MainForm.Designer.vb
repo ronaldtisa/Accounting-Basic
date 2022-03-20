@@ -24,62 +24,15 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.InventoryControl_tab1 = New System.Windows.Forms.TabControl()
-        Me.TabPage_addItem = New System.Windows.Forms.TabPage()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid_Main_Inventory = New System.Windows.Forms.DataGridView()
         Me.GroupBox14 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.TabPage_updateItem = New System.Windows.Forms.TabPage()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.inventory_update_search_ItemName = New System.Windows.Forms.TextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.inventory_update_search_itemcode = New System.Windows.Forms.TextBox()
-        Me.DGV_Inventory_Update = New System.Windows.Forms.DataGridView()
-        Me.Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Company_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnitPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Item_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnitTax = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Update = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.TabPage_deleteItem = New System.Windows.Forms.TabPage()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.inventory_delete_search_ItemName = New System.Windows.Forms.TextBox()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.inventory_delete_search_ItemCode = New System.Windows.Forms.TextBox()
-        Me.DGV_Inventory_Delete = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button_Delete_Item_Record = New System.Windows.Forms.Button()
+        Me.Button_Add_Item_Form = New System.Windows.Forms.Button()
+        Me.Button_Update_Item = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.SupplierRecord = New System.Windows.Forms.TabControl()
@@ -148,24 +101,9 @@ Partial Class MainForm
         Me.Registration_supplier_main = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.InventoryControl_tab1.SuspendLayout()
-        Me.TabPage_addItem.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGrid_Main_Inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox14.SuspendLayout()
-        Me.TabPage_updateItem.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.DGV_Inventory_Update, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage_deleteItem.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
-        CType(Me.DGV_Inventory_Delete, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.SupplierRecord.SuspendLayout()
         Me.AddSupplier.SuspendLayout()
@@ -209,7 +147,7 @@ Partial Class MainForm
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TabPage2.Controls.Add(Me.InventoryControl_tab1)
+        Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 28)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -217,50 +155,19 @@ Partial Class MainForm
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Inventory Control"
         '
-        'InventoryControl_tab1
-        '
-        Me.InventoryControl_tab1.Controls.Add(Me.TabPage_addItem)
-        Me.InventoryControl_tab1.Controls.Add(Me.TabPage_updateItem)
-        Me.InventoryControl_tab1.Controls.Add(Me.TabPage_deleteItem)
-        Me.InventoryControl_tab1.Location = New System.Drawing.Point(6, 6)
-        Me.InventoryControl_tab1.Name = "InventoryControl_tab1"
-        Me.InventoryControl_tab1.SelectedIndex = 0
-        Me.InventoryControl_tab1.Size = New System.Drawing.Size(1168, 496)
-        Me.InventoryControl_tab1.TabIndex = 8
-        '
-        'TabPage_addItem
-        '
-        Me.TabPage_addItem.Controls.Add(Me.Panel1)
-        Me.TabPage_addItem.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage_addItem.Name = "TabPage_addItem"
-        Me.TabPage_addItem.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage_addItem.Size = New System.Drawing.Size(1160, 468)
-        Me.TabPage_addItem.TabIndex = 0
-        Me.TabPage_addItem.Text = "Add item"
-        Me.TabPage_addItem.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Location = New System.Drawing.Point(6, 6)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(910, 456)
-        Me.Panel1.TabIndex = 3
-        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.DataGrid_Main_Inventory)
         Me.GroupBox1.Controls.Add(Me.GroupBox14)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(900, 448)
-        Me.GroupBox1.TabIndex = 16
+        Me.GroupBox1.Size = New System.Drawing.Size(920, 486)
+        Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "INVENTORY"
         '
@@ -271,435 +178,54 @@ Partial Class MainForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGrid_Main_Inventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGrid_Main_Inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGrid_Main_Inventory.Location = New System.Drawing.Point(6, 91)
+        Me.DataGrid_Main_Inventory.Location = New System.Drawing.Point(6, 93)
         Me.DataGrid_Main_Inventory.Name = "DataGrid_Main_Inventory"
         Me.DataGrid_Main_Inventory.RowTemplate.Height = 25
-        Me.DataGrid_Main_Inventory.Size = New System.Drawing.Size(888, 351)
+        Me.DataGrid_Main_Inventory.Size = New System.Drawing.Size(908, 387)
         Me.DataGrid_Main_Inventory.TabIndex = 0
         '
         'GroupBox14
         '
-        Me.GroupBox14.Controls.Add(Me.Button1)
-        Me.GroupBox14.Controls.Add(Me.Button7)
+        Me.GroupBox14.Controls.Add(Me.Button_Delete_Item_Record)
+        Me.GroupBox14.Controls.Add(Me.Button_Add_Item_Form)
+        Me.GroupBox14.Controls.Add(Me.Button_Update_Item)
         Me.GroupBox14.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.GroupBox14.Location = New System.Drawing.Point(6, 30)
         Me.GroupBox14.Name = "GroupBox14"
-        Me.GroupBox14.Size = New System.Drawing.Size(888, 57)
+        Me.GroupBox14.Size = New System.Drawing.Size(908, 57)
         Me.GroupBox14.TabIndex = 15
         Me.GroupBox14.TabStop = False
         Me.GroupBox14.Text = "GroupBox14"
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(73, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(107, 27)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Add Item Form"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button7.Location = New System.Drawing.Point(239, 21)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(107, 27)
-        Me.Button7.TabIndex = 6
-        Me.Button7.Text = "Save Database"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'TabPage_updateItem
-        '
-        Me.TabPage_updateItem.Controls.Add(Me.Panel2)
-        Me.TabPage_updateItem.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage_updateItem.Name = "TabPage_updateItem"
-        Me.TabPage_updateItem.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage_updateItem.Size = New System.Drawing.Size(1160, 468)
-        Me.TabPage_updateItem.TabIndex = 1
-        Me.TabPage_updateItem.Text = "Update Record"
-        Me.TabPage_updateItem.UseVisualStyleBackColor = True
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.GroupBox5)
-        Me.Panel2.Controls.Add(Me.GroupBox4)
-        Me.Panel2.Controls.Add(Me.GroupBox3)
-        Me.Panel2.Controls.Add(Me.DGV_Inventory_Update)
-        Me.Panel2.Controls.Add(Me.Button9)
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Location = New System.Drawing.Point(6, 6)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(910, 456)
-        Me.Panel2.TabIndex = 4
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.ComboBox1)
-        Me.GroupBox5.Location = New System.Drawing.Point(456, 47)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(447, 43)
-        Me.GroupBox5.TabIndex = 9
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Search By Company Name"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(3, 14)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(438, 23)
-        Me.ComboBox1.TabIndex = 0
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.inventory_update_search_ItemName)
-        Me.GroupBox4.Location = New System.Drawing.Point(3, 47)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(432, 43)
-        Me.GroupBox4.TabIndex = 9
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Search by Item Name"
-        '
-        'inventory_update_search_ItemName
-        '
-        Me.inventory_update_search_ItemName.Location = New System.Drawing.Point(6, 14)
-        Me.inventory_update_search_ItemName.Name = "inventory_update_search_ItemName"
-        Me.inventory_update_search_ItemName.Size = New System.Drawing.Size(420, 23)
-        Me.inventory_update_search_ItemName.TabIndex = 1
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.inventory_update_search_itemcode)
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(220, 42)
-        Me.GroupBox3.TabIndex = 8
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Search by Item Code"
-        '
-        'inventory_update_search_itemcode
-        '
-        Me.inventory_update_search_itemcode.Location = New System.Drawing.Point(6, 13)
-        Me.inventory_update_search_itemcode.Name = "inventory_update_search_itemcode"
-        Me.inventory_update_search_itemcode.Size = New System.Drawing.Size(207, 23)
-        Me.inventory_update_search_itemcode.TabIndex = 0
-        '
-        'DGV_Inventory_Update
-        '
-        Me.DGV_Inventory_Update.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DGV_Inventory_Update.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV_Inventory_Update.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Inventory_Update.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Code, Me.Telephone, Me.ProductName, Me.Company_Id, Me.Quantity, Me.UnitPrice, Me.Item_Id, Me.Address, Me.UnitTax, Me.Update})
-        Me.DGV_Inventory_Update.Location = New System.Drawing.Point(3, 94)
-        Me.DGV_Inventory_Update.Name = "DGV_Inventory_Update"
-        Me.DGV_Inventory_Update.RowTemplate.Height = 25
-        Me.DGV_Inventory_Update.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_Inventory_Update.Size = New System.Drawing.Size(900, 322)
-        Me.DGV_Inventory_Update.TabIndex = 7
-        '
-        'Code
-        '
-        Me.Code.DataPropertyName = "Code"
-        Me.Code.FillWeight = 77.36041!
-        Me.Code.HeaderText = "Item Code"
-        Me.Code.Name = "Code"
-        '
-        'Telephone
-        '
-        Me.Telephone.DataPropertyName = "Telephone"
-        Me.Telephone.HeaderText = "Telephone"
-        Me.Telephone.Name = "Telephone"
-        Me.Telephone.Visible = False
-        '
-        'ProductName
-        '
-        Me.ProductName.DataPropertyName = "ProductName"
-        Me.ProductName.FillWeight = 77.36041!
-        Me.ProductName.HeaderText = "Product Name"
-        Me.ProductName.Name = "ProductName"
-        '
-        'Company_Id
-        '
-        Me.Company_Id.DataPropertyName = "Company_Id"
-        Me.Company_Id.FillWeight = 77.36041!
-        Me.Company_Id.HeaderText = "Company ID"
-        Me.Company_Id.Name = "Company_Id"
-        '
-        'Quantity
-        '
-        Me.Quantity.DataPropertyName = "Quantity"
-        Me.Quantity.FillWeight = 77.36041!
-        Me.Quantity.HeaderText = "Stock"
-        Me.Quantity.Name = "Quantity"
-        '
-        'UnitPrice
-        '
-        Me.UnitPrice.DataPropertyName = "UnitPrice"
-        Me.UnitPrice.FillWeight = 77.36041!
-        Me.UnitPrice.HeaderText = "Unit Price"
-        Me.UnitPrice.Name = "UnitPrice"
-        '
-        'Item_Id
-        '
-        Me.Item_Id.DataPropertyName = "Item_Id"
-        Me.Item_Id.HeaderText = "Item ID"
-        Me.Item_Id.Name = "Item_Id"
-        Me.Item_Id.Visible = False
-        '
-        'Address
-        '
-        Me.Address.DataPropertyName = "Address"
-        Me.Address.HeaderText = "Address"
-        Me.Address.Name = "Address"
-        Me.Address.Visible = False
-        '
-        'UnitTax
-        '
-        Me.UnitTax.DataPropertyName = "UnitTax"
-        Me.UnitTax.HeaderText = "Unit Tax"
-        Me.UnitTax.Name = "UnitTax"
-        Me.UnitTax.Visible = False
-        '
-        'Update
-        '
-        Me.Update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Update.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Update.FillWeight = 213.198!
-        Me.Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Update.HeaderText = ""
-        Me.Update.Name = "Update"
-        Me.Update.ReadOnly = True
-        Me.Update.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Update.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Update.Text = "View"
-        Me.Update.ToolTipText = "Load view form for further editing"
-        Me.Update.UseColumnTextForButtonValue = True
-        Me.Update.Width = 70
-        '
-        'Button9
-        '
-        Me.Button9.Location = New System.Drawing.Point(439, 422)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(115, 29)
-        Me.Button9.TabIndex = 6
-        Me.Button9.Text = "Save Database"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(599, 422)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(126, 29)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Select /Edit Record"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'TabPage_deleteItem
-        '
-        Me.TabPage_deleteItem.Controls.Add(Me.Panel3)
-        Me.TabPage_deleteItem.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage_deleteItem.Name = "TabPage_deleteItem"
-        Me.TabPage_deleteItem.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage_deleteItem.Size = New System.Drawing.Size(1160, 468)
-        Me.TabPage_deleteItem.TabIndex = 2
-        Me.TabPage_deleteItem.Text = "Delete Inventory"
-        Me.TabPage_deleteItem.UseVisualStyleBackColor = True
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.GroupBox6)
-        Me.Panel3.Controls.Add(Me.GroupBox7)
-        Me.Panel3.Controls.Add(Me.GroupBox8)
-        Me.Panel3.Controls.Add(Me.DGV_Inventory_Delete)
-        Me.Panel3.Controls.Add(Me.Button8)
-        Me.Panel3.Controls.Add(Me.Button4)
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Location = New System.Drawing.Point(6, 6)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(910, 456)
-        Me.Panel3.TabIndex = 5
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.ComboBox2)
-        Me.GroupBox6.Location = New System.Drawing.Point(472, 47)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(431, 43)
-        Me.GroupBox6.TabIndex = 12
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Search By Company Name"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(6, 13)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(419, 23)
-        Me.ComboBox2.TabIndex = 0
-        '
-        'GroupBox7
-        '
-        Me.GroupBox7.Controls.Add(Me.inventory_delete_search_ItemName)
-        Me.GroupBox7.Location = New System.Drawing.Point(3, 47)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(432, 43)
-        Me.GroupBox7.TabIndex = 11
-        Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Search by Item Name"
-        '
-        'inventory_delete_search_ItemName
-        '
-        Me.inventory_delete_search_ItemName.Location = New System.Drawing.Point(6, 13)
-        Me.inventory_delete_search_ItemName.Name = "inventory_delete_search_ItemName"
-        Me.inventory_delete_search_ItemName.Size = New System.Drawing.Size(420, 23)
-        Me.inventory_delete_search_ItemName.TabIndex = 1
-        '
-        'GroupBox8
-        '
-        Me.GroupBox8.Controls.Add(Me.inventory_delete_search_ItemCode)
-        Me.GroupBox8.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(271, 43)
-        Me.GroupBox8.TabIndex = 10
-        Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "Search by Item Code"
-        '
-        'inventory_delete_search_ItemCode
-        '
-        Me.inventory_delete_search_ItemCode.Location = New System.Drawing.Point(6, 15)
-        Me.inventory_delete_search_ItemCode.Name = "inventory_delete_search_ItemCode"
-        Me.inventory_delete_search_ItemCode.Size = New System.Drawing.Size(259, 23)
-        Me.inventory_delete_search_ItemCode.TabIndex = 0
-        '
-        'DGV_Inventory_Delete
-        '
-        Me.DGV_Inventory_Delete.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV_Inventory_Delete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Inventory_Delete.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.Delete})
-        Me.DGV_Inventory_Delete.Location = New System.Drawing.Point(3, 94)
-        Me.DGV_Inventory_Delete.Name = "DGV_Inventory_Delete"
-        Me.DGV_Inventory_Delete.RowTemplate.Height = 25
-        Me.DGV_Inventory_Delete.Size = New System.Drawing.Size(900, 325)
-        Me.DGV_Inventory_Delete.TabIndex = 8
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Code"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Item Code"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 150
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Item_Id"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Item ID"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Address"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Address"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Visible = False
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Telephone"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Telephone"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Visible = False
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "UnitTax"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "UnitTax"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.Visible = False
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ProductName"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Product Name"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Company_Id"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Company ID"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 120
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Quantity"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Quantity"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Width = 80
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "UnitPrice"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Unit Price"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.Width = 85
-        '
-        'Delete
-        '
-        Me.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.Delete.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Delete.HeaderText = ""
-        Me.Delete.Name = "Delete"
-        Me.Delete.Text = "Select"
-        Me.Delete.ToolTipText = "Click to open confirm delete form"
-        Me.Delete.Width = 70
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button8.Location = New System.Drawing.Point(516, 425)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(120, 26)
-        Me.Button8.TabIndex = 7
-        Me.Button8.Text = "Save Database"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button4.Location = New System.Drawing.Point(393, 425)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(100, 26)
-        Me.Button4.TabIndex = 6
-        Me.Button4.Text = "Select Record"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(530, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(93, 15)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Delete Inventory"
+        'Button_Delete_Item_Record
+        '
+        Me.Button_Delete_Item_Record.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button_Delete_Item_Record.Location = New System.Drawing.Point(257, 17)
+        Me.Button_Delete_Item_Record.Name = "Button_Delete_Item_Record"
+        Me.Button_Delete_Item_Record.Size = New System.Drawing.Size(107, 34)
+        Me.Button_Delete_Item_Record.TabIndex = 7
+        Me.Button_Delete_Item_Record.Text = "Delete Item Record"
+        Me.Button_Delete_Item_Record.UseVisualStyleBackColor = False
+        '
+        'Button_Add_Item_Form
+        '
+        Me.Button_Add_Item_Form.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button_Add_Item_Form.Location = New System.Drawing.Point(6, 17)
+        Me.Button_Add_Item_Form.Name = "Button_Add_Item_Form"
+        Me.Button_Add_Item_Form.Size = New System.Drawing.Size(107, 34)
+        Me.Button_Add_Item_Form.TabIndex = 2
+        Me.Button_Add_Item_Form.Text = "Add Item Form"
+        Me.Button_Add_Item_Form.UseVisualStyleBackColor = False
+        '
+        'Button_Update_Item
+        '
+        Me.Button_Update_Item.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button_Update_Item.Location = New System.Drawing.Point(135, 17)
+        Me.Button_Update_Item.Name = "Button_Update_Item"
+        Me.Button_Update_Item.Size = New System.Drawing.Size(107, 34)
+        Me.Button_Update_Item.TabIndex = 6
+        Me.Button_Update_Item.Text = "Update Item Detail"
+        Me.Button_Update_Item.UseVisualStyleBackColor = False
         '
         'TabPage3
         '
@@ -786,8 +312,8 @@ Partial Class MainForm
         'Column3
         '
         Me.Column3.DataPropertyName = "Company_Id"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column3.HeaderText = "Company ID"
         Me.Column3.Name = "Column3"
         '
@@ -1336,32 +862,13 @@ Partial Class MainForm
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
         Me.Name = "MainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MainForm"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
-        Me.InventoryControl_tab1.ResumeLayout(False)
-        Me.TabPage_addItem.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DataGrid_Main_Inventory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox14.ResumeLayout(False)
-        Me.TabPage_updateItem.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        CType(Me.DGV_Inventory_Update, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage_deleteItem.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
-        CType(Me.DGV_Inventory_Delete, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.SupplierRecord.ResumeLayout(False)
         Me.AddSupplier.ResumeLayout(False)
@@ -1400,36 +907,20 @@ Partial Class MainForm
     End Sub
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button1 As Button
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button7 As Button
     Friend WithEvents Button12 As Button
     Friend WithEvents Button14 As Button
     Friend WithEvents Button11 As Button
     Friend WithEvents Button13 As Button
     Friend WithEvents Supplier_add_supplier As Button
-    Friend WithEvents InventoryControl_tab1 As TabControl
-    Friend WithEvents TabPage_addItem As TabPage
-    Friend WithEvents TabPage_updateItem As TabPage
-    Friend WithEvents TabPage_deleteItem As TabPage
     Friend WithEvents SupplierRecord As TabControl
     Friend WithEvents AddSupplier As TabPage
     Friend WithEvents UpdateRecord As TabPage
     Friend WithEvents DeleteSupplier As TabPage
-    Friend WithEvents DGV_Inventory_Update As DataGridView
-    Friend WithEvents DGV_Inventory_Delete As DataGridView
     Friend WithEvents Label6 As Label
     Friend WithEvents DGV_Supplier_Update As DataGridView
     Friend WithEvents Label5 As Label
@@ -1446,18 +937,6 @@ Partial Class MainForm
     Friend WithEvents PasteToolStripButton As ToolStripButton
     Friend WithEvents toolStripSeparator1 As ToolStripSeparator
     Friend WithEvents HelpToolStripButton As ToolStripButton
-    Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents inventory_update_search_ItemName As TextBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents inventory_update_search_itemcode As TextBox
-    Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents inventory_delete_search_ItemName As TextBox
-    Friend WithEvents GroupBox8 As GroupBox
-    Friend WithEvents inventory_delete_search_ItemCode As TextBox
     Friend WithEvents GroupBox11 As GroupBox
     Friend WithEvents txtbx_supplier_update As TextBox
     Friend WithEvents GroupBox9 As GroupBox
@@ -1488,34 +967,17 @@ Partial Class MainForm
     Friend WithEvents Company_Main_id As DataGridViewTextBoxColumn
     Friend WithEvents Registration_supplier_main As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox13 As GroupBox
-    Friend WithEvents GroupBox14 As GroupBox
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGrid_Main_Inventory As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DataGrid_Main_Supplier As DataGridView
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents CashFLOW As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents Delete As DataGridViewButtonColumn
-    Friend WithEvents Code As DataGridViewTextBoxColumn
-    Friend WithEvents Telephone As DataGridViewTextBoxColumn
-    Friend WithEvents ProductName As DataGridViewTextBoxColumn
-    Friend WithEvents Company_Id As DataGridViewTextBoxColumn
-    Friend WithEvents Quantity As DataGridViewTextBoxColumn
-    Friend WithEvents UnitPrice As DataGridViewTextBoxColumn
-    Friend WithEvents Item_Id As DataGridViewTextBoxColumn
-    Friend WithEvents Address As DataGridViewTextBoxColumn
-    Friend WithEvents UnitTax As DataGridViewTextBoxColumn
-    Friend WithEvents Update As DataGridViewButtonColumn
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents DataGrid_Main_Inventory As DataGridView
+    Friend WithEvents GroupBox14 As GroupBox
+    Friend WithEvents Button_Delete_Item_Record As Button
+    Friend WithEvents Button_Add_Item_Form As Button
+    Friend WithEvents Button_Update_Item As Button
     Public Property Red As Color
 End Class

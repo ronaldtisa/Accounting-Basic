@@ -65,6 +65,7 @@ Partial Class Message
         Me.Controls.Add(Me.CancelMessage)
         Me.Controls.Add(Me.ContinueMessage)
         Me.Name = "Message"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Message"
         Me.ResumeLayout(False)
         Me.PerformLayout()

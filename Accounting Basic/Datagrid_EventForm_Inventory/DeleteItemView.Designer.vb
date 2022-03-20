@@ -23,6 +23,9 @@ Partial Class DeleteItemView
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox_ItemID = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox_Total_Unit = New System.Windows.Forms.TextBox()
@@ -41,13 +44,27 @@ Partial Class DeleteItemView
         Me.TextBox_ItemName = New System.Windows.Forms.TextBox()
         Me.TextBox_ItemCode = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.inventory_delete_search_ItemName = New System.Windows.Forms.TextBox()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.inventory_delete_search_ItemCode = New System.Windows.Forms.TextBox()
+        Me.DGV_Inventory_Delete = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
+        CType(Me.DGV_Inventory_Delete, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.TextBox_ItemID)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -68,17 +85,42 @@ Partial Class DeleteItemView
         Me.GroupBox1.Controls.Add(Me.TextBox_ItemCode)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Location = New System.Drawing.Point(646, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(732, 342)
+        Me.GroupBox1.Size = New System.Drawing.Size(461, 550)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Enter New Item Details"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(10, 44)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(62, 17)
+        Me.Label10.TabIndex = 23
+        Me.Label10.Text = "Item ID :"
+        '
+        'TextBox_ItemID
+        '
+        Me.TextBox_ItemID.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox_ItemID.Location = New System.Drawing.Point(127, 41)
+        Me.TextBox_ItemID.Name = "TextBox_ItemID"
+        Me.TextBox_ItemID.Size = New System.Drawing.Size(327, 25)
+        Me.TextBox_ItemID.TabIndex = 22
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox1.Location = New System.Drawing.Point(127, 134)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(327, 25)
+        Me.TextBox1.TabIndex = 21
+        '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(626, 291)
+        Me.Button2.Location = New System.Drawing.Point(335, 477)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(94, 25)
         Me.Button2.TabIndex = 20
@@ -89,7 +131,7 @@ Partial Class DeleteItemView
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label9.Location = New System.Drawing.Point(243, 318)
+        Me.Label9.Location = New System.Drawing.Point(81, 505)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(231, 15)
         Me.Label9.TabIndex = 19
@@ -98,15 +140,15 @@ Partial Class DeleteItemView
         'TextBox_Total_Unit
         '
         Me.TextBox_Total_Unit.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox_Total_Unit.Location = New System.Drawing.Point(473, 260)
+        Me.TextBox_Total_Unit.Location = New System.Drawing.Point(128, 353)
         Me.TextBox_Total_Unit.Name = "TextBox_Total_Unit"
-        Me.TextBox_Total_Unit.Size = New System.Drawing.Size(247, 25)
+        Me.TextBox_Total_Unit.Size = New System.Drawing.Size(327, 25)
         Me.TextBox_Total_Unit.TabIndex = 17
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(391, 263)
+        Me.Label8.Location = New System.Drawing.Point(11, 356)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 17)
         Me.Label8.TabIndex = 16
@@ -115,7 +157,7 @@ Partial Class DeleteItemView
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(11, 263)
+        Me.Label7.Location = New System.Drawing.Point(10, 168)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(92, 17)
         Me.Label7.TabIndex = 15
@@ -124,7 +166,7 @@ Partial Class DeleteItemView
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(391, 232)
+        Me.Label6.Location = New System.Drawing.Point(11, 325)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 17)
         Me.Label6.TabIndex = 14
@@ -133,7 +175,7 @@ Partial Class DeleteItemView
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(11, 232)
+        Me.Label5.Location = New System.Drawing.Point(10, 294)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(80, 17)
         Me.Label5.TabIndex = 13
@@ -142,7 +184,7 @@ Partial Class DeleteItemView
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 134)
+        Me.Label4.Location = New System.Drawing.Point(10, 199)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(65, 17)
         Me.Label4.TabIndex = 12
@@ -151,7 +193,7 @@ Partial Class DeleteItemView
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 106)
+        Me.Label3.Location = New System.Drawing.Point(10, 137)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(114, 17)
         Me.Label3.TabIndex = 11
@@ -160,7 +202,7 @@ Partial Class DeleteItemView
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 75)
+        Me.Label2.Location = New System.Drawing.Point(10, 106)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(84, 17)
         Me.Label2.TabIndex = 10
@@ -169,7 +211,7 @@ Partial Class DeleteItemView
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 44)
+        Me.Label1.Location = New System.Drawing.Point(11, 75)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 17)
         Me.Label1.TabIndex = 9
@@ -178,80 +220,157 @@ Partial Class DeleteItemView
         'TextBoxID
         '
         Me.TextBoxID.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxID.Location = New System.Drawing.Point(151, 260)
+        Me.TextBoxID.Location = New System.Drawing.Point(127, 165)
         Me.TextBoxID.Name = "TextBoxID"
-        Me.TextBoxID.Size = New System.Drawing.Size(129, 25)
+        Me.TextBoxID.Size = New System.Drawing.Size(327, 25)
         Me.TextBoxID.TabIndex = 8
         '
         'TextBoxTelephone
         '
         Me.TextBoxTelephone.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxTelephone.Location = New System.Drawing.Point(151, 229)
+        Me.TextBoxTelephone.Location = New System.Drawing.Point(127, 291)
         Me.TextBoxTelephone.Name = "TextBoxTelephone"
-        Me.TextBoxTelephone.Size = New System.Drawing.Size(206, 25)
+        Me.TextBoxTelephone.Size = New System.Drawing.Size(327, 25)
         Me.TextBoxTelephone.TabIndex = 7
         '
         'TextBox_Unit_Price
         '
         Me.TextBox_Unit_Price.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox_Unit_Price.Location = New System.Drawing.Point(473, 229)
+        Me.TextBox_Unit_Price.Location = New System.Drawing.Point(128, 322)
         Me.TextBox_Unit_Price.Name = "TextBox_Unit_Price"
-        Me.TextBox_Unit_Price.Size = New System.Drawing.Size(247, 25)
+        Me.TextBox_Unit_Price.Size = New System.Drawing.Size(327, 25)
         Me.TextBox_Unit_Price.TabIndex = 6
         '
         'TextBox_Address
         '
         Me.TextBox_Address.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox_Address.Location = New System.Drawing.Point(151, 134)
+        Me.TextBox_Address.Location = New System.Drawing.Point(127, 196)
         Me.TextBox_Address.Multiline = True
         Me.TextBox_Address.Name = "TextBox_Address"
-        Me.TextBox_Address.Size = New System.Drawing.Size(569, 89)
+        Me.TextBox_Address.Size = New System.Drawing.Size(327, 89)
         Me.TextBox_Address.TabIndex = 4
         '
         'TextBox_ItemName
         '
         Me.TextBox_ItemName.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox_ItemName.Location = New System.Drawing.Point(151, 72)
+        Me.TextBox_ItemName.Location = New System.Drawing.Point(127, 103)
         Me.TextBox_ItemName.Name = "TextBox_ItemName"
-        Me.TextBox_ItemName.Size = New System.Drawing.Size(569, 25)
+        Me.TextBox_ItemName.Size = New System.Drawing.Size(327, 25)
         Me.TextBox_ItemName.TabIndex = 2
         '
         'TextBox_ItemCode
         '
         Me.TextBox_ItemCode.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox_ItemCode.Location = New System.Drawing.Point(151, 41)
+        Me.TextBox_ItemCode.Location = New System.Drawing.Point(127, 72)
         Me.TextBox_ItemCode.Name = "TextBox_ItemCode"
-        Me.TextBox_ItemCode.Size = New System.Drawing.Size(569, 25)
+        Me.TextBox_ItemCode.Size = New System.Drawing.Size(327, 25)
         Me.TextBox_ItemCode.TabIndex = 1
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button1.Location = New System.Drawing.Point(290, 290)
+        Me.Button1.Location = New System.Drawing.Point(128, 477)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(152, 25)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Delete"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'Panel3
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox1.Location = New System.Drawing.Point(151, 103)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(569, 25)
-        Me.TextBox1.TabIndex = 21
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.GroupBox6)
+        Me.Panel3.Controls.Add(Me.GroupBox7)
+        Me.Panel3.Controls.Add(Me.GroupBox8)
+        Me.Panel3.Controls.Add(Me.DGV_Inventory_Delete)
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(651, 550)
+        Me.Panel3.TabIndex = 6
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.ComboBox2)
+        Me.GroupBox6.Location = New System.Drawing.Point(362, 48)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(277, 43)
+        Me.GroupBox6.TabIndex = 12
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Search By Company Name"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(6, 13)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(265, 23)
+        Me.ComboBox2.TabIndex = 0
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.inventory_delete_search_ItemName)
+        Me.GroupBox7.Location = New System.Drawing.Point(3, 47)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(353, 43)
+        Me.GroupBox7.TabIndex = 11
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Search by Item Name"
+        '
+        'inventory_delete_search_ItemName
+        '
+        Me.inventory_delete_search_ItemName.Location = New System.Drawing.Point(6, 13)
+        Me.inventory_delete_search_ItemName.Name = "inventory_delete_search_ItemName"
+        Me.inventory_delete_search_ItemName.Size = New System.Drawing.Size(339, 23)
+        Me.inventory_delete_search_ItemName.TabIndex = 1
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.inventory_delete_search_ItemCode)
+        Me.GroupBox8.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(271, 43)
+        Me.GroupBox8.TabIndex = 10
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "Search by Item Code"
+        '
+        'inventory_delete_search_ItemCode
+        '
+        Me.inventory_delete_search_ItemCode.Location = New System.Drawing.Point(6, 15)
+        Me.inventory_delete_search_ItemCode.Name = "inventory_delete_search_ItemCode"
+        Me.inventory_delete_search_ItemCode.Size = New System.Drawing.Size(259, 23)
+        Me.inventory_delete_search_ItemCode.TabIndex = 0
+        '
+        'DGV_Inventory_Delete
+        '
+        Me.DGV_Inventory_Delete.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Inventory_Delete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Inventory_Delete.Location = New System.Drawing.Point(3, 94)
+        Me.DGV_Inventory_Delete.Name = "DGV_Inventory_Delete"
+        Me.DGV_Inventory_Delete.RowTemplate.Height = 25
+        Me.DGV_Inventory_Delete.Size = New System.Drawing.Size(636, 442)
+        Me.DGV_Inventory_Delete.TabIndex = 8
         '
         'DeleteItemView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(732, 342)
+        Me.ClientSize = New System.Drawing.Size(1104, 549)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "DeleteItemView"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DeleteItemView"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
+        CType(Me.DGV_Inventory_Delete, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -276,4 +395,14 @@ Partial Class DeleteItemView
     Friend WithEvents TextBox_ItemCode As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents inventory_delete_search_ItemName As TextBox
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents inventory_delete_search_ItemCode As TextBox
+    Friend WithEvents DGV_Inventory_Delete As DataGridView
+    Friend WithEvents Label10 As Label
+    Friend WithEvents TextBox_ItemID As TextBox
 End Class

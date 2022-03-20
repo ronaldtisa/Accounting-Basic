@@ -76,4 +76,8 @@
     </EditorConfigFiles>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Datagrid_EventForm_Report\" />
+  </ItemGroup>
+
 </Project>

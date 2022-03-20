@@ -24,6 +24,8 @@ Partial Class Add_Inventory
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBoxtax = New System.Windows.Forms.TextBox()
         Me.TextBoxItemId = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.AddItem_ComboBox_Company_list = New System.Windows.Forms.ComboBox()
@@ -42,8 +44,6 @@ Partial Class Add_Inventory
         Me.TextBox_Address = New System.Windows.Forms.TextBox()
         Me.TextBox_ItemName = New System.Windows.Forms.TextBox()
         Me.TextBox_ItemCode = New System.Windows.Forms.TextBox()
-        Me.TextBoxtax = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -88,6 +88,23 @@ Partial Class Add_Inventory
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Enter New Item Details"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(10, 263)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(52, 17)
+        Me.Label10.TabIndex = 22
+        Me.Label10.Text = "Tax % :"
+        '
+        'TextBoxtax
+        '
+        Me.TextBoxtax.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBoxtax.Location = New System.Drawing.Point(151, 260)
+        Me.TextBoxtax.Name = "TextBoxtax"
+        Me.TextBoxtax.Size = New System.Drawing.Size(206, 25)
+        Me.TextBoxtax.TabIndex = 21
         '
         'TextBoxItemId
         '
@@ -245,30 +262,15 @@ Partial Class Add_Inventory
         Me.TextBox_ItemCode.Size = New System.Drawing.Size(352, 25)
         Me.TextBox_ItemCode.TabIndex = 1
         '
-        'TextBoxtax
-        '
-        Me.TextBoxtax.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBoxtax.Location = New System.Drawing.Point(151, 260)
-        Me.TextBoxtax.Name = "TextBoxtax"
-        Me.TextBoxtax.Size = New System.Drawing.Size(206, 25)
-        Me.TextBoxtax.TabIndex = 21
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(10, 263)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 17)
-        Me.Label10.TabIndex = 22
-        Me.Label10.Text = "Tax % :"
-        '
         'Add_Inventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(733, 320)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Add_Inventory"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
