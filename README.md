@@ -1,8 +1,29 @@
 # Accounting-Basic
-Inventory Management on vb.net with SQLite for database book. Still in raw state.
+Inventory Management on vb.net with SQLite for database book.
 
+***
+Welcome to the Accounting-Basic
+***
+## Goal
+1. To create a functional basic inventory management
+2. Free to use
+3. Using SQLite as database
 
-<a >
-  Help wanted. If you want to contribute, feel free to do so. Thanks in advance
-</a>
-<a href="#" class="button pill" Background = red>REGDF</a>
+***
+## Known issue
+***
+1. SQLite limit 1 write/read configuration
+2. Lots of same program on the market offer clean UI, and Uses SLQ database
+
+***
+##  Worse Issue
+***
+1. This project was programmed by me a non-programmer
+ >  Its fuckin' hard
+
+>***
+>## Community
+>***
+>  If you want to contribute, please do so. 
+>  Thanks in advance
+
