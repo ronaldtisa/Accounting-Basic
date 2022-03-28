@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Accounting Basic", "Accounting Basic\Accounting Basic.vbproj", "{A95ADEDE-FD0C-439D-AFAC-B9D7467CF642}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Accounting Basic", "Accounting Basic\Accounting Basic.vbproj", "{A95ADEDE-FD0C-439D-AFAC-B9D7467CF642}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C4F3EF8-DCC9-43F8-9849-FC3AD3EB691E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Point Of Sales Simple", "Point Of Sales Simple\Point Of Sales Simple.vbproj", "{EC99C406-51E5-455E-B04D-7DCF0645DCE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{A95ADEDE-FD0C-439D-AFAC-B9D7467CF642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A95ADEDE-FD0C-439D-AFAC-B9D7467CF642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A95ADEDE-FD0C-439D-AFAC-B9D7467CF642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC99C406-51E5-455E-B04D-7DCF0645DCE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC99C406-51E5-455E-B04D-7DCF0645DCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC99C406-51E5-455E-B04D-7DCF0645DCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC99C406-51E5-455E-B04D-7DCF0645DCE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

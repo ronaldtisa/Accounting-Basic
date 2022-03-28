@@ -29,6 +29,7 @@ Public Class Add_Inventory
     End Function
     Public Sub company_list_autoFill()
         Using SLiteCon As New SQLiteConnection(ConnectionSTR)
+
             Using SliteCom As New SQLiteCommand("Select Company_Id, Registration, CompanyName, CompanyTelephone, CompanyAddress From Supplier")
                 Using dataadapt As New SQLiteDataAdapter
                     Using datatab As New DataTable
@@ -62,9 +63,14 @@ Public Class Add_Inventory
                     TextBox_ItemName.Clear()
                     TextBox_ItemCode.Clear()
                 End If
-
             End Using
+            Dim loaddata As New MainForm
+            loaddata.load2()
+            loaddata.DataGrid_Main_Inventory.Refresh()
+            loaddata.Refresh()
+            MainForm.Refresh()
         End Using
+
     End Sub
 
     Private Sub AddItem_ComboBox_Company_list_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AddItem_ComboBox_Company_list.SelectedIndexChanged
@@ -74,19 +80,14 @@ Public Class Add_Inventory
                 SLiteCon.Open()
                 Dim sliteCom As New SQLiteCommand("SELECT Company_Id, Registration, CompanyAddress, CompanyTelephone From Supplier WHERE CompanyName='" + AddItem_ComboBox_Company_list.Text + "'", SLiteCon)
                 Dim dataadapt As SQLiteDataReader = sliteCom.ExecuteReader
-
                 While dataadapt.Read
-
-                    TextBoxID.Text = dataadapt("Company_Id")
+                    TextBoxID.Text = dataadapt.GetString("Company_Id").ToString '' Int change to string data
                     TextBox_Address.Text = dataadapt("CompanyAddress")
                     TextBoxTelephone.Text = dataadapt("CompanyTelephone")
                 End While
-
             End Using
-
         Catch ex As Exception
         End Try
-
     End Sub
 
     Private Sub TextBox_ItemName_TextChanged(sender As Object, e As EventArgs) Handles TextBox_ItemName.TextChanged
@@ -94,12 +95,26 @@ Public Class Add_Inventory
         Dim texboxValue As String
         texboxValue = TextBox_ItemName.Text
         str = texboxValue.Split(" ").First()
-
         Dim str2 As String
         Dim texboxValue2 As String
         texboxValue2 = AddItem_ComboBox_Company_list.Text
         str2 = texboxValue2.Split(" ").First()
-
         TextBoxItemId.Text = (str2 & "_" & str)
+    End Sub
+
+    Private Sub Add_Inventory_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Dim loaddata As New MainForm
+        loaddata.load2()
+        loaddata.DataGrid_Main_Inventory.Refresh()
+        loaddata.Refresh()
+        MainForm.Refresh()
+    End Sub
+
+    Private Sub Add_Inventory_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim loaddata As New MainForm
+        loaddata.load2()
+        loaddata.DataGrid_Main_Inventory.Refresh()
+        loaddata.Refresh()
+        MainForm.Refresh()
     End Sub
 End Class

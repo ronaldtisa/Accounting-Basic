@@ -25,50 +25,31 @@ Partial Class MainForm
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Inventory = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid_Main_Inventory = New System.Windows.Forms.DataGridView()
         Me.GroupBox14 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button_Delete_Item_Record = New System.Windows.Forms.Button()
         Me.Button_Add_Item_Form = New System.Windows.Forms.Button()
         Me.Button_Update_Item = New System.Windows.Forms.Button()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.SupplierRecord = New System.Windows.Forms.TabControl()
-        Me.AddSupplier = New System.Windows.Forms.TabPage()
-        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.supplier = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGrid_Main_Supplier = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CashFLOW = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox13 = New System.Windows.Forms.GroupBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Supplier_add_supplier = New System.Windows.Forms.Button()
-        Me.UpdateRecord = New System.Windows.Forms.TabPage()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
-        Me.txtbx_supplier_update = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DGV_Supplier_Update = New System.Windows.Forms.DataGridView()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.DeleteSupplier = New System.Windows.Forms.TabPage()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.txtbx_supplier_delete = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.DGV_Supplier_Delete = New System.Windows.Forms.DataGridView()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.TabControl2 = New System.Windows.Forms.TabControl()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.report = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
@@ -77,8 +58,8 @@ Partial Class MainForm
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2_registration_no = New System.Windows.Forms.TextBox()
+        Me.TextBox1_mycompanyname = New System.Windows.Forms.TextBox()
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -91,7 +72,6 @@ Partial Class MainForm
         Me.PasteToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Time_stat = New System.Windows.Forms.ToolStripStatusLabel()
@@ -99,34 +79,37 @@ Partial Class MainForm
         Me.CompanyName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Company_Main_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Registration_supplier_main = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.Inventory.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGrid_Main_Inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox14.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        Me.SupplierRecord.SuspendLayout()
-        Me.AddSupplier.SuspendLayout()
-        Me.Panel6.SuspendLayout()
+        Me.supplier.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGrid_Main_Supplier, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox13.SuspendLayout()
-        Me.UpdateRecord.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.GroupBox11.SuspendLayout()
-        CType(Me.DGV_Supplier_Update, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DeleteSupplier.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
-        CType(Me.DGV_Supplier_Delete, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage4.SuspendLayout()
-        Me.TabControl2.SuspendLayout()
+        Me.report.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -134,26 +117,27 @@ Partial Class MainForm
         Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.Inventory)
+        Me.TabControl1.Controls.Add(Me.supplier)
+        Me.TabControl1.Controls.Add(Me.report)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Location = New System.Drawing.Point(0, 28)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.Padding = New System.Drawing.Point(6, 5)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(934, 530)
+        Me.TabControl1.Size = New System.Drawing.Size(934, 517)
         Me.TabControl1.TabIndex = 4
         '
-        'TabPage2
+        'Inventory
         '
-        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TabPage2.Controls.Add(Me.GroupBox1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 28)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(926, 498)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Inventory Control"
+        Me.Inventory.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Inventory.Controls.Add(Me.GroupBox1)
+        Me.Inventory.Location = New System.Drawing.Point(4, 28)
+        Me.Inventory.Name = "Inventory"
+        Me.Inventory.Padding = New System.Windows.Forms.Padding(3)
+        Me.Inventory.Size = New System.Drawing.Size(926, 485)
+        Me.Inventory.TabIndex = 1
+        Me.Inventory.Text = "Inventory Control"
         '
         'GroupBox1
         '
@@ -166,7 +150,7 @@ Partial Class MainForm
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(920, 486)
+        Me.GroupBox1.Size = New System.Drawing.Size(920, 479)
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "INVENTORY"
@@ -178,24 +162,35 @@ Partial Class MainForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGrid_Main_Inventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGrid_Main_Inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGrid_Main_Inventory.Location = New System.Drawing.Point(6, 93)
+        Me.DataGrid_Main_Inventory.Location = New System.Drawing.Point(6, 84)
         Me.DataGrid_Main_Inventory.Name = "DataGrid_Main_Inventory"
         Me.DataGrid_Main_Inventory.RowTemplate.Height = 25
-        Me.DataGrid_Main_Inventory.Size = New System.Drawing.Size(908, 387)
+        Me.DataGrid_Main_Inventory.Size = New System.Drawing.Size(908, 389)
         Me.DataGrid_Main_Inventory.TabIndex = 0
         '
         'GroupBox14
         '
+        Me.GroupBox14.Controls.Add(Me.Button5)
         Me.GroupBox14.Controls.Add(Me.Button_Delete_Item_Record)
         Me.GroupBox14.Controls.Add(Me.Button_Add_Item_Form)
         Me.GroupBox14.Controls.Add(Me.Button_Update_Item)
         Me.GroupBox14.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox14.Location = New System.Drawing.Point(6, 30)
+        Me.GroupBox14.Location = New System.Drawing.Point(6, 21)
         Me.GroupBox14.Name = "GroupBox14"
         Me.GroupBox14.Size = New System.Drawing.Size(908, 57)
         Me.GroupBox14.TabIndex = 15
         Me.GroupBox14.TabStop = False
-        Me.GroupBox14.Text = "GroupBox14"
+        Me.GroupBox14.Text = "Control"
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button5.Location = New System.Drawing.Point(795, 17)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(107, 34)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "Refresh Record"
+        Me.Button5.UseVisualStyleBackColor = False
         '
         'Button_Delete_Item_Record
         '
@@ -220,78 +215,37 @@ Partial Class MainForm
         'Button_Update_Item
         '
         Me.Button_Update_Item.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button_Update_Item.Location = New System.Drawing.Point(135, 17)
+        Me.Button_Update_Item.Location = New System.Drawing.Point(137, 17)
         Me.Button_Update_Item.Name = "Button_Update_Item"
-        Me.Button_Update_Item.Size = New System.Drawing.Size(107, 34)
+        Me.Button_Update_Item.Size = New System.Drawing.Size(105, 34)
         Me.Button_Update_Item.TabIndex = 6
         Me.Button_Update_Item.Text = "Update Item Detail"
         Me.Button_Update_Item.UseVisualStyleBackColor = False
         '
-        'TabPage3
+        'supplier
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TabPage3.Controls.Add(Me.Panel10)
-        Me.TabPage3.Controls.Add(Me.SupplierRecord)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 28)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(926, 498)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Supplier Control"
-        '
-        'Panel10
-        '
-        Me.Panel10.BackColor = System.Drawing.Color.Maroon
-        Me.Panel10.Location = New System.Drawing.Point(624, 3)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(556, 24)
-        Me.Panel10.TabIndex = 15
-        '
-        'SupplierRecord
-        '
-        Me.SupplierRecord.Appearance = System.Windows.Forms.TabAppearance.Buttons
-        Me.SupplierRecord.Controls.Add(Me.AddSupplier)
-        Me.SupplierRecord.Controls.Add(Me.UpdateRecord)
-        Me.SupplierRecord.Controls.Add(Me.DeleteSupplier)
-        Me.SupplierRecord.Location = New System.Drawing.Point(6, 6)
-        Me.SupplierRecord.Name = "SupplierRecord"
-        Me.SupplierRecord.SelectedIndex = 0
-        Me.SupplierRecord.Size = New System.Drawing.Size(1168, 493)
-        Me.SupplierRecord.TabIndex = 9
-        '
-        'AddSupplier
-        '
-        Me.AddSupplier.Controls.Add(Me.Panel6)
-        Me.AddSupplier.Location = New System.Drawing.Point(4, 27)
-        Me.AddSupplier.Name = "AddSupplier"
-        Me.AddSupplier.Padding = New System.Windows.Forms.Padding(3)
-        Me.AddSupplier.Size = New System.Drawing.Size(1160, 462)
-        Me.AddSupplier.TabIndex = 0
-        Me.AddSupplier.Text = "Add Supplier"
-        Me.AddSupplier.UseVisualStyleBackColor = True
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Controls.Add(Me.GroupBox2)
-        Me.Panel6.Controls.Add(Me.GroupBox13)
-        Me.Panel6.Location = New System.Drawing.Point(6, 6)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1148, 453)
-        Me.Panel6.TabIndex = 6
+        Me.supplier.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.supplier.Controls.Add(Me.GroupBox2)
+        Me.supplier.Location = New System.Drawing.Point(4, 28)
+        Me.supplier.Name = "supplier"
+        Me.supplier.Padding = New System.Windows.Forms.Padding(3)
+        Me.supplier.Size = New System.Drawing.Size(926, 485)
+        Me.supplier.TabIndex = 2
+        Me.supplier.Text = "Supplier Control"
         '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox2.Controls.Add(Me.DataGrid_Main_Supplier)
+        Me.GroupBox2.Controls.Add(Me.GroupBox13)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 60)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(900, 388)
-        Me.GroupBox2.TabIndex = 15
+        Me.GroupBox2.Size = New System.Drawing.Size(920, 479)
+        Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "SUPPLIER"
         '
@@ -302,11 +256,11 @@ Partial Class MainForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGrid_Main_Supplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGrid_Main_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGrid_Main_Supplier.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column5, Me.Column7, Me.CashFLOW})
-        Me.DataGrid_Main_Supplier.Location = New System.Drawing.Point(6, 18)
+        Me.DataGrid_Main_Supplier.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column5, Me.Column7, Me.address})
+        Me.DataGrid_Main_Supplier.Location = New System.Drawing.Point(6, 84)
         Me.DataGrid_Main_Supplier.Name = "DataGrid_Main_Supplier"
         Me.DataGrid_Main_Supplier.RowTemplate.Height = 25
-        Me.DataGrid_Main_Supplier.Size = New System.Drawing.Size(888, 364)
+        Me.DataGrid_Main_Supplier.Size = New System.Drawing.Size(911, 389)
         Me.DataGrid_Main_Supplier.TabIndex = 0
         '
         'Column3
@@ -314,272 +268,114 @@ Partial Class MainForm
         Me.Column3.DataPropertyName = "Company_Id"
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Column3.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Column3.FillWeight = 67.75491!
         Me.Column3.HeaderText = "Company ID"
         Me.Column3.Name = "Column3"
         '
         'Column5
         '
         Me.Column5.DataPropertyName = "CompanyName"
+        Me.Column5.FillWeight = 66.3998!
         Me.Column5.HeaderText = "Company Name"
         Me.Column5.Name = "Column5"
         '
         'Column7
         '
         Me.Column7.DataPropertyName = "CompanyTelephone"
+        Me.Column7.FillWeight = 66.3998!
         Me.Column7.HeaderText = "Telephone"
         Me.Column7.Name = "Column7"
         '
-        'CashFLOW
+        'address
         '
-        Me.CashFLOW.DataPropertyName = "CashFLOW"
-        Me.CashFLOW.HeaderText = "Credit"
-        Me.CashFLOW.Name = "CashFLOW"
+        Me.address.DataPropertyName = "CompanyAddress"
+        Me.address.FillWeight = 66.3998!
+        Me.address.HeaderText = "Address"
+        Me.address.Name = "address"
         '
         'GroupBox13
         '
+        Me.GroupBox13.Controls.Add(Me.Button6)
+        Me.GroupBox13.Controls.Add(Me.Button3)
+        Me.GroupBox13.Controls.Add(Me.Button1)
         Me.GroupBox13.Controls.Add(Me.Supplier_add_supplier)
         Me.GroupBox13.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox13.Location = New System.Drawing.Point(9, 3)
+        Me.GroupBox13.Location = New System.Drawing.Point(6, 21)
         Me.GroupBox13.Name = "GroupBox13"
-        Me.GroupBox13.Size = New System.Drawing.Size(445, 51)
+        Me.GroupBox13.Size = New System.Drawing.Size(846, 57)
         Me.GroupBox13.TabIndex = 14
         Me.GroupBox13.TabStop = False
-        Me.GroupBox13.Text = "GroupBox13"
+        Me.GroupBox13.Text = "Control"
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button6.Location = New System.Drawing.Point(733, 17)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(107, 34)
+        Me.Button6.TabIndex = 19
+        Me.Button6.Text = "Refresh Record"
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button3.Location = New System.Drawing.Point(256, 17)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(107, 34)
+        Me.Button3.TabIndex = 18
+        Me.Button3.Text = "Delete Supplier Detail"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.Location = New System.Drawing.Point(137, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(104, 34)
+        Me.Button1.TabIndex = 17
+        Me.Button1.Text = "Update Supplier Detail"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Supplier_add_supplier
         '
-        Me.Supplier_add_supplier.Location = New System.Drawing.Point(6, 18)
+        Me.Supplier_add_supplier.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Supplier_add_supplier.Location = New System.Drawing.Point(6, 17)
         Me.Supplier_add_supplier.Name = "Supplier_add_supplier"
-        Me.Supplier_add_supplier.Size = New System.Drawing.Size(120, 27)
-        Me.Supplier_add_supplier.TabIndex = 13
+        Me.Supplier_add_supplier.Size = New System.Drawing.Size(107, 34)
+        Me.Supplier_add_supplier.TabIndex = 16
         Me.Supplier_add_supplier.Text = "Add Supplier"
-        Me.Supplier_add_supplier.UseVisualStyleBackColor = True
+        Me.Supplier_add_supplier.UseVisualStyleBackColor = False
         '
-        'UpdateRecord
+        'report
         '
-        Me.UpdateRecord.Controls.Add(Me.Panel4)
-        Me.UpdateRecord.Location = New System.Drawing.Point(4, 27)
-        Me.UpdateRecord.Name = "UpdateRecord"
-        Me.UpdateRecord.Padding = New System.Windows.Forms.Padding(3)
-        Me.UpdateRecord.Size = New System.Drawing.Size(1160, 462)
-        Me.UpdateRecord.TabIndex = 1
-        Me.UpdateRecord.Text = "Update Record"
-        Me.UpdateRecord.UseVisualStyleBackColor = True
+        Me.report.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.report.Controls.Add(Me.GroupBox3)
+        Me.report.Location = New System.Drawing.Point(4, 28)
+        Me.report.Name = "report"
+        Me.report.Padding = New System.Windows.Forms.Padding(3)
+        Me.report.Size = New System.Drawing.Size(926, 485)
+        Me.report.TabIndex = 3
+        Me.report.Text = "Report Control"
         '
-        'Panel4
+        'GroupBox3
         '
-        Me.Panel4.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.GroupBox11)
-        Me.Panel4.Controls.Add(Me.Label6)
-        Me.Panel4.Controls.Add(Me.DGV_Supplier_Update)
-        Me.Panel4.Controls.Add(Me.Button12)
-        Me.Panel4.Controls.Add(Me.Button14)
-        Me.Panel4.Location = New System.Drawing.Point(6, 6)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(910, 453)
-        Me.Panel4.TabIndex = 8
+        Me.GroupBox3.Controls.Add(Me.Button4)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 6)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(407, 476)
+        Me.GroupBox3.TabIndex = 0
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Sales Report"
         '
-        'GroupBox11
+        'Button4
         '
-        Me.GroupBox11.Controls.Add(Me.txtbx_supplier_update)
-        Me.GroupBox11.Location = New System.Drawing.Point(3, 27)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(432, 55)
-        Me.GroupBox11.TabIndex = 16
-        Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "Search by Item Name"
-        '
-        'txtbx_supplier_update
-        '
-        Me.txtbx_supplier_update.Location = New System.Drawing.Point(6, 22)
-        Me.txtbx_supplier_update.Name = "txtbx_supplier_update"
-        Me.txtbx_supplier_update.Size = New System.Drawing.Size(420, 23)
-        Me.txtbx_supplier_update.TabIndex = 1
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 9)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(91, 15)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Update Supplier"
-        '
-        'DGV_Supplier_Update
-        '
-        Me.DGV_Supplier_Update.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Supplier_Update.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2})
-        Me.DGV_Supplier_Update.Location = New System.Drawing.Point(3, 82)
-        Me.DGV_Supplier_Update.Name = "DGV_Supplier_Update"
-        Me.DGV_Supplier_Update.RowTemplate.Height = 25
-        Me.DGV_Supplier_Update.Size = New System.Drawing.Size(900, 328)
-        Me.DGV_Supplier_Update.TabIndex = 13
-        '
-        'Column2
-        '
-        Me.Column2.DataPropertyName = "buttonColumn"
-        Me.Column2.HeaderText = "Update"
-        Me.Column2.Name = "Column2"
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(575, 416)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(115, 32)
-        Me.Button12.TabIndex = 11
-        Me.Button12.Text = "Save Database"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Button14
-        '
-        Me.Button14.Location = New System.Drawing.Point(441, 416)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(128, 32)
-        Me.Button14.TabIndex = 12
-        Me.Button14.Text = "Select Record"
-        Me.Button14.UseVisualStyleBackColor = True
-        '
-        'DeleteSupplier
-        '
-        Me.DeleteSupplier.Controls.Add(Me.Panel5)
-        Me.DeleteSupplier.Location = New System.Drawing.Point(4, 27)
-        Me.DeleteSupplier.Name = "DeleteSupplier"
-        Me.DeleteSupplier.Padding = New System.Windows.Forms.Padding(3)
-        Me.DeleteSupplier.Size = New System.Drawing.Size(1160, 462)
-        Me.DeleteSupplier.TabIndex = 2
-        Me.DeleteSupplier.Text = "Delete Supplier"
-        Me.DeleteSupplier.UseVisualStyleBackColor = True
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.GroupBox9)
-        Me.Panel5.Controls.Add(Me.Label5)
-        Me.Panel5.Controls.Add(Me.DGV_Supplier_Delete)
-        Me.Panel5.Controls.Add(Me.Button11)
-        Me.Panel5.Controls.Add(Me.Button13)
-        Me.Panel5.Location = New System.Drawing.Point(6, 6)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(910, 453)
-        Me.Panel5.TabIndex = 7
-        '
-        'GroupBox9
-        '
-        Me.GroupBox9.Controls.Add(Me.txtbx_supplier_delete)
-        Me.GroupBox9.Location = New System.Drawing.Point(3, 27)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(432, 55)
-        Me.GroupBox9.TabIndex = 14
-        Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Text = "Search by Item Name"
-        '
-        'txtbx_supplier_delete
-        '
-        Me.txtbx_supplier_delete.Location = New System.Drawing.Point(6, 22)
-        Me.txtbx_supplier_delete.Name = "txtbx_supplier_delete"
-        Me.txtbx_supplier_delete.Size = New System.Drawing.Size(420, 23)
-        Me.txtbx_supplier_delete.TabIndex = 1
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 9)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(86, 15)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "Delete Supplier"
-        '
-        'DGV_Supplier_Delete
-        '
-        Me.DGV_Supplier_Delete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Supplier_Delete.Location = New System.Drawing.Point(3, 82)
-        Me.DGV_Supplier_Delete.Name = "DGV_Supplier_Delete"
-        Me.DGV_Supplier_Delete.RowTemplate.Height = 25
-        Me.DGV_Supplier_Delete.Size = New System.Drawing.Size(900, 331)
-        Me.DGV_Supplier_Delete.TabIndex = 11
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(587, 419)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(101, 29)
-        Me.Button11.TabIndex = 10
-        Me.Button11.Text = "Save Database"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Button13
-        '
-        Me.Button13.Location = New System.Drawing.Point(442, 419)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(126, 29)
-        Me.Button13.TabIndex = 9
-        Me.Button13.Text = "Select /Edit Record"
-        Me.Button13.UseVisualStyleBackColor = True
-        '
-        'TabPage4
-        '
-        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TabPage4.Controls.Add(Me.Panel8)
-        Me.TabPage4.Controls.Add(Me.TabControl2)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 28)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(926, 498)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Report Control"
-        '
-        'Panel8
-        '
-        Me.Panel8.BackColor = System.Drawing.Color.Maroon
-        Me.Panel8.Location = New System.Drawing.Point(624, 3)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(556, 24)
-        Me.Panel8.TabIndex = 0
-        '
-        'TabControl2
-        '
-        Me.TabControl2.Controls.Add(Me.TabPage5)
-        Me.TabControl2.Controls.Add(Me.TabPage6)
-        Me.TabControl2.Controls.Add(Me.TabPage7)
-        Me.TabControl2.Location = New System.Drawing.Point(6, 6)
-        Me.TabControl2.Multiline = True
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.Padding = New System.Drawing.Point(20, 3)
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(914, 486)
-        Me.TabControl2.TabIndex = 1
-        '
-        'TabPage5
-        '
-        Me.TabPage5.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(906, 458)
-        Me.TabPage5.TabIndex = 0
-        Me.TabPage5.Text = "Inventory Report"
-        Me.TabPage5.UseVisualStyleBackColor = True
-        '
-        'TabPage6
-        '
-        Me.TabPage6.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(906, 458)
-        Me.TabPage6.TabIndex = 1
-        Me.TabPage6.Text = "Sales Report                   "
-        Me.TabPage6.UseVisualStyleBackColor = True
-        '
-        'TabPage7
-        '
-        Me.TabPage7.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(906, 458)
-        Me.TabPage7.TabIndex = 2
-        Me.TabPage7.Text = "TabPage 1.0"
-        Me.TabPage7.UseVisualStyleBackColor = True
+        Me.Button4.Location = New System.Drawing.Point(36, 51)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(98, 32)
+        Me.Button4.TabIndex = 0
+        Me.Button4.Text = "Sales"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'GroupBox12
         '
@@ -613,8 +409,8 @@ Partial Class MainForm
         Me.GroupBox10.Controls.Add(Me.TextBox3)
         Me.GroupBox10.Controls.Add(Me.Label8)
         Me.GroupBox10.Controls.Add(Me.Label1)
-        Me.GroupBox10.Controls.Add(Me.TextBox2)
-        Me.GroupBox10.Controls.Add(Me.TextBox1)
+        Me.GroupBox10.Controls.Add(Me.TextBox2_registration_no)
+        Me.GroupBox10.Controls.Add(Me.TextBox1_mycompanyname)
         Me.GroupBox10.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.GroupBox10.Location = New System.Drawing.Point(940, 56)
         Me.GroupBox10.Name = "GroupBox10"
@@ -668,26 +464,32 @@ Partial Class MainForm
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label1.Location = New System.Drawing.Point(6, 110)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 17)
+        Me.Label1.Size = New System.Drawing.Size(107, 17)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Inventory Value :"
+        Me.Label1.Text = "Registration No :"
         '
-        'TextBox2
+        'TextBox2_registration_no
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox2.Location = New System.Drawing.Point(6, 131)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(230, 25)
-        Me.TextBox2.TabIndex = 1
+        Me.TextBox2_registration_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox2_registration_no.Enabled = False
+        Me.TextBox2_registration_no.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox2_registration_no.Location = New System.Drawing.Point(6, 131)
+        Me.TextBox2_registration_no.Name = "TextBox2_registration_no"
+        Me.TextBox2_registration_no.Size = New System.Drawing.Size(230, 25)
+        Me.TextBox2_registration_no.TabIndex = 1
         '
-        'TextBox1
+        'TextBox1_mycompanyname
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox1.Location = New System.Drawing.Point(6, 32)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(230, 57)
-        Me.TextBox1.TabIndex = 0
+        Me.TextBox1_mycompanyname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1_mycompanyname.Cursor = System.Windows.Forms.Cursors.No
+        Me.TextBox1_mycompanyname.Enabled = False
+        Me.TextBox1_mycompanyname.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox1_mycompanyname.Location = New System.Drawing.Point(6, 32)
+        Me.TextBox1_mycompanyname.Multiline = True
+        Me.TextBox1_mycompanyname.Name = "TextBox1_mycompanyname"
+        Me.TextBox1_mycompanyname.ReadOnly = True
+        Me.TextBox1_mycompanyname.Size = New System.Drawing.Size(230, 57)
+        Me.TextBox1_mycompanyname.TabIndex = 0
         '
         'ToolStripContainer1
         '
@@ -798,14 +600,6 @@ Partial Class MainForm
         Me.HelpToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.HelpToolStripButton.Text = "He&lp"
         '
-        'Panel9
-        '
-        Me.Panel9.BackColor = System.Drawing.Color.Maroon
-        Me.Panel9.Location = New System.Drawing.Point(581, 28)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(603, 22)
-        Me.Panel9.TabIndex = 15
-        '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.Time_stat})
@@ -848,16 +642,126 @@ Partial Class MainForm
         Me.Registration_supplier_main.HeaderText = "Registration No."
         Me.Registration_supplier_main.Name = "Registration_supplier_main"
         '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.GroupBox4)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(926, 485)
+        Me.TabPage1.TabIndex = 4
+        Me.TabPage1.Text = "Point of Sales User"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox4.Controls.Add(Me.DataGridView1)
+        Me.GroupBox4.Controls.Add(Me.GroupBox5)
+        Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(920, 479)
+        Me.GroupBox4.TabIndex = 17
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "SUPPLIER"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 84)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 25
+        Me.DataGridView1.Size = New System.Drawing.Size(908, 389)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Button7)
+        Me.GroupBox5.Controls.Add(Me.Button8)
+        Me.GroupBox5.Controls.Add(Me.Button9)
+        Me.GroupBox5.Controls.Add(Me.Button10)
+        Me.GroupBox5.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 21)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(846, 57)
+        Me.GroupBox5.TabIndex = 14
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Control"
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button7.Location = New System.Drawing.Point(733, 17)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(107, 34)
+        Me.Button7.TabIndex = 19
+        Me.Button7.Text = "Refresh Record"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button8.Location = New System.Drawing.Point(256, 17)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(107, 34)
+        Me.Button8.TabIndex = 18
+        Me.Button8.Text = "Delete User Detail"
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button9.Location = New System.Drawing.Point(137, 17)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(104, 34)
+        Me.Button9.TabIndex = 17
+        Me.Button9.Text = "Update User Detail"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button10.Location = New System.Drawing.Point(6, 17)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(107, 34)
+        Me.Button10.TabIndex = 16
+        Me.Button10.Text = "Add User"
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Log_Id"
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridViewTextBoxColumn1.FillWeight = 67.75491!
+        Me.DataGridViewTextBoxColumn1.HeaderText = "LogIn ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CompanyName"
+        Me.DataGridViewTextBoxColumn2.FillWeight = 66.3998!
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BackColor = System.Drawing.Color.DimGray
         Me.ClientSize = New System.Drawing.Size(1184, 570)
         Me.Controls.Add(Me.GroupBox12)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox10)
-        Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.ToolStripContainer1)
         Me.Controls.Add(Me.TabControl1)
         Me.DoubleBuffered = True
@@ -865,31 +769,16 @@ Partial Class MainForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MainForm"
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
+        Me.Inventory.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DataGrid_Main_Inventory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox14.ResumeLayout(False)
-        Me.TabPage3.ResumeLayout(False)
-        Me.SupplierRecord.ResumeLayout(False)
-        Me.AddSupplier.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
+        Me.supplier.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGrid_Main_Supplier, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox13.ResumeLayout(False)
-        Me.UpdateRecord.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.GroupBox11.ResumeLayout(False)
-        Me.GroupBox11.PerformLayout()
-        CType(Me.DGV_Supplier_Update, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DeleteSupplier.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox9.PerformLayout()
-        CType(Me.DGV_Supplier_Delete, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage4.ResumeLayout(False)
-        Me.TabControl2.ResumeLayout(False)
+        Me.report.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox12.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
@@ -901,30 +790,18 @@ Partial Class MainForm
         Me.ToolStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button14 As Button
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button13 As Button
-    Friend WithEvents Supplier_add_supplier As Button
-    Friend WithEvents SupplierRecord As TabControl
-    Friend WithEvents AddSupplier As TabPage
-    Friend WithEvents UpdateRecord As TabPage
-    Friend WithEvents DeleteSupplier As TabPage
-    Friend WithEvents Label6 As Label
-    Friend WithEvents DGV_Supplier_Update As DataGridView
-    Friend WithEvents Label5 As Label
-    Friend WithEvents DGV_Supplier_Delete As DataGridView
+    Friend WithEvents Inventory As TabPage
+    Friend WithEvents supplier As TabPage
+    Friend WithEvents report As TabPage
     Friend WithEvents ToolStripContainer1 As ToolStripContainer
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents NewToolStripButton As ToolStripButton
@@ -937,17 +814,6 @@ Partial Class MainForm
     Friend WithEvents PasteToolStripButton As ToolStripButton
     Friend WithEvents toolStripSeparator1 As ToolStripSeparator
     Friend WithEvents HelpToolStripButton As ToolStripButton
-    Friend WithEvents GroupBox11 As GroupBox
-    Friend WithEvents txtbx_supplier_update As TextBox
-    Friend WithEvents GroupBox9 As GroupBox
-    Friend WithEvents txtbx_supplier_delete As TextBox
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents TabControl2 As TabControl
-    Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents TabPage7 As TabPage
-    Friend WithEvents Panel9 As Panel
     Friend WithEvents GroupBox12 As GroupBox
     Friend WithEvents Button2 As Button
     Friend WithEvents GroupBox10 As GroupBox
@@ -958,26 +824,42 @@ Partial Class MainForm
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents TextBox2_registration_no As TextBox
+    Friend WithEvents TextBox1_mycompanyname As TextBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Time_stat As ToolStripStatusLabel
     Friend WithEvents CompanyName As DataGridViewTextBoxColumn
     Friend WithEvents Company_Main_id As DataGridViewTextBoxColumn
     Friend WithEvents Registration_supplier_main As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox13 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents DataGrid_Main_Supplier As DataGridView
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents CashFLOW As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGrid_Main_Inventory As DataGridView
     Friend WithEvents GroupBox14 As GroupBox
     Friend WithEvents Button_Delete_Item_Record As Button
     Friend WithEvents Button_Add_Item_Form As Button
     Friend WithEvents Button_Update_Item As Button
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents DataGrid_Main_Supplier As DataGridView
+    Friend WithEvents GroupBox13 As GroupBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Supplier_add_supplier As Button
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents address As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button10 As Button
     Public Property Red As Color
 End Class

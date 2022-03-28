@@ -2,14 +2,10 @@
 Imports System.IO
 
 Public Class MainForm
-    Dim con As SQLiteConnection = New SQLiteConnection(ConnectionSTR)
-    Dim cmd As SQLiteCommand
-    Dim da As SQLiteDataAdapter
-    Dim dt As DataTable
-    Dim sql As String
-    Dim sql2 As String
+
     Private Const ConnectionSTR As String = "Data Source=C:\Account Basic\ACCOUNTBOOK.db"
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DoubleBuffered = True
         ''==================================================================================================
         ''================= FOLDER DIRECTORY CHECK =========================================================
         Dim file As String = "ACCOUNTBOOK.db"
@@ -19,26 +15,18 @@ Public Class MainForm
             Exit Sub
         Else
             Dim di As DirectoryInfo = Directory.CreateDirectory(folder)
-
         End If
         If duplicateDataBase(fullPath) Then
+            load2()
             Exit Sub
         Else
             Dim Initiate As New Initiate
             Initiate.createDatabase()
         End If
+
         Return
-
     End Sub
-    ''================================================================================================
-    ''refresh 
-    Public Sub refreshAlldatagrid()
-        '' UpdateTable(ds)
-        ''rebind the DGV
-        ''  dgv_items.DataSource = GetData()
-    End Sub
-
-    Public Sub MainformShow() Handles MyBase.Shown
+    Public Sub MainformShow(sender As Object, e As EventArgs) Handles MyBase.Shown
         Dim str As String = "Data Source=C:\Account Basic\ACCOUNTBOOK.db"
         Dim strSQL As String
         Dim con As New SQLiteConnection(str)
@@ -49,20 +37,42 @@ Public Class MainForm
         con.Open()
         ' Execute SQL statement
         oCmd.CommandText = strSQL
-        RecCount = CInt(oCmd.ExecuteScalar)
+        Try
+            RecCount = CInt(oCmd.ExecuteScalar)
+        Catch ex As Exception
+
+        End Try
+
         If RecCount = 0 Then
             ' Table is empty
             DatabaseMake.Show()
+        Else
+            mycompanyinfo()
         End If
         Timer1.Start()
-        Main_Page_Inventory()
+        Me.load2()
 
+    End Sub
+
+    Public Sub mycompanyinfo() '' load company info to form
+        Using SLiteCon As New SQLiteConnection(ConnectionSTR)
+            SLiteCon.Open()
+            Dim sliteCom As New SQLiteCommand("Select CompanyName, CompanyRegistration from MyCompany", SLiteCon)
+            Dim dataadapt As SQLiteDataReader = sliteCom.ExecuteReader
+
+            While dataadapt.Read
+                TextBox1_mycompanyname.Text = dataadapt("CompanyName") '' Int change to string data
+                TextBox2_registration_no.Text = dataadapt("CompanyRegistration")
+
+            End While
+        End Using
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim Today As Object
         Today = Now
         Time_stat.Text = Format(Today, "dd / MMMM / yyyy h:mm:ss tt")
+
     End Sub
     Private Function duplicateDataBase(fullPath As String) As Boolean
         Return System.IO.File.Exists(fullPath)
@@ -73,174 +83,10 @@ Public Class MainForm
     ''=======================================================================================================================
     ''========================== MAIN PAGE INVENTORY + SUPPLIER VIEW =========================================================================
 
-    Public Sub Main_Page_Inventory()
-        ''INVENTORY======================================================================================================
-        Using SLITECONNECTION_M As SQLiteConnection = New SQLiteConnection(ConnectionSTR)
-            Using SLITECOMMAND As SQLiteCommand = New SQLiteCommand("Select Code, ProductName, Company_Id, Quantity, UnitPrice from Inventory", SLITECONNECTION_M)
-                SLITECOMMAND.CommandType = CommandType.Text
-                Using DTA As SQLiteDataAdapter = New SQLiteDataAdapter(SLITECOMMAND)
-                    Using DATATABLE As New DataView
-                        Try
-                            DataGrid_Main_Inventory.DataSource = DATATABLE
-                        Catch ex As Exception
-                        End Try
-                    End Using
-                End Using
-            End Using
-        End Using
-    End Sub
-    ''=====================================================================================================================================
-    ''========================== MAIN PAGE INVENTORY + SUPPLIER VIEW CODE END==============================================================
-    Private Sub Supplier_add_supplier_Click(sender As Object, e As EventArgs) Handles Supplier_add_supplier.Click
-        Add_Supplier.Show()
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         DatabaseMake.Show()
     End Sub
 
-    ''=====================================================================================================================================
-    ''========================== INVENTORY CONTROL CODE END================================================================================
-
-
-    ''=====================================================================================================================================
-    ''========================== SUPPLIER CONTROL CODE START================================================================================
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txtbx_supplier_update.TextChanged
-        sql = "SELECT * FROM Supplier WHERE CompanyName LIKE '%" & txtbx_supplier_update.Text & "%'"
-        search_update_supplier(sql, DGV_Supplier_Update)
-
-    End Sub
-
-
-    Private Sub search_update_supplier(sql As String, dtg As DataGridView)
-        sql = "SELECT * FROM Supplier"
-        Try
-            con.Open()
-            cmd = New SQLiteCommand()
-            da = New SQLiteDataAdapter
-            ''   dt = New DataTable
-            With cmd
-                .Connection = con
-                .CommandText = sql
-            End With
-            With da
-                .SelectCommand = cmd
-                ''.Fill(dt)
-            End With
-            dtg.DataSource = dt
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            con.Close()
-            da.Dispose()
-        End Try
-
-        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
-        buttonColumn.HeaderText = ""
-        buttonColumn.Width = 60
-        buttonColumn.Name = "buttonColumn"
-        buttonColumn.Text = "Delete"
-        buttonColumn.UseColumnTextForButtonValue = True
-        buttonColumn.DataPropertyName = "buttonColumn"
-        DGV_Supplier_Update.Columns.Insert(0, buttonColumn)
-        da.Dispose()
-    End Sub
-
-    Private Sub txtbx_supplier_delete_TextChanged(sender As Object, e As EventArgs) Handles txtbx_supplier_delete.TextChanged
-        sql = "SELECT * FROM Supplier WHERE CompanyName LIKE '%" & txtbx_supplier_update.Text & "%'"
-        search_delete_supplier(sql, DGV_Supplier_Delete)
-        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
-        buttonColumn.HeaderText = ""
-        buttonColumn.Width = 60
-        buttonColumn.Name = "buttonColumn"
-        buttonColumn.Text = "Delete"
-        buttonColumn.UseColumnTextForButtonValue = True
-        DGV_Supplier_Delete.Columns.Insert(0, buttonColumn)
-    End Sub
-    Private Sub search_delete_supplier(sql As String, dtg As DataGridView)
-        Try
-            con.Open()
-            cmd = New SQLiteCommand()
-            da = New SQLiteDataAdapter
-            ''    dt = New DataTable
-            With cmd
-                .Connection = con
-                .CommandText = sql
-            End With
-            With da
-                .SelectCommand = cmd
-                ''         .Fill(dt)
-            End With
-            dtg.DataSource = dt
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            con.Close()
-            da.Dispose()
-        End Try
-
-        Dim buttonColumn As DataGridViewButtonColumn = New DataGridViewButtonColumn()
-        buttonColumn.HeaderText = ""
-        buttonColumn.Width = 60
-        buttonColumn.Name = "buttonColumn"
-        buttonColumn.Text = "Delete"
-        buttonColumn.UseColumnTextForButtonValue = True
-        buttonColumn.DataPropertyName = "buttonColumn"
-        DGV_Supplier_Update.Columns.Insert(0, buttonColumn)
-        da.Dispose()
-    End Sub
-
-    '' tab control
-
-    Private Sub InventoryControl_tab1_SelectedIndexChanged(sender As Object, e As EventArgs)
-        ''     If InventoryControl_tab1.SelectedTab Is InventoryControl_tab1.TabPages("TabPage_addItem") Then
-        Using con As New SQLiteConnection(ConnectionSTR)
-                Using com As New SQLiteCommand("Select Code, ProductName, Company_Id, Quantity, UnitPrice, UnitTax from Inventory", con)
-                    com.CommandType = CommandType.Text
-                    Using da As New SQLiteDataAdapter(com)
-                        Using dtIn As New DataTable
-                            con.Open()
-                            com.ExecuteNonQuery()
-                            da.Fill(dtIn)
-                            DataGrid_Main_Inventory.DataSource = dtIn
-
-                        End Using
-                    End Using
-                End Using
-            End Using
-        ''    End If
-        ''    If InventoryControl_tab1.SelectedTab Is InventoryControl_tab1.TabPages("TabPage_updateItem") Then
-
-        ''   End If
-
-    End Sub
-
-    Private Sub SupplierRecord_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SupplierRecord.SelectedIndexChanged
-        If SupplierRecord.SelectedTab Is SupplierRecord.TabPages("AddSupplier") Then
-            Using con As New SQLiteConnection(ConnectionSTR)
-                Using com As New SQLiteCommand("Select Company_Id, Registration, CompanyName, CompanyAddress, CompanyTelephone from Supplier", con)
-                    com.CommandType = CommandType.Text
-                    Using da As New SQLiteDataAdapter(com)
-                        Using dtIn As New DataTable
-                            con.Open()
-                            com.ExecuteNonQuery()
-                            da.Fill(dtIn)
-                            DataGrid_Main_Supplier.DataSource = dtIn
-
-                        End Using
-                    End Using
-                End Using
-            End Using
-        End If
-
-        If SupplierRecord.SelectedTab Is SupplierRecord.TabPages("TabPage_UpdateSupplier") Then
-
-        End If
-
-        If SupplierRecord.SelectedTab Is SupplierRecord.TabPages("TabPage_DeleteSuppler") Then
-
-        End If
-    End Sub
     Private Sub Button_Add_Item_Form_Click(sender As Object, e As EventArgs) Handles Button_Add_Item_Form.Click
         Add_Inventory.Show()
     End Sub
@@ -252,4 +98,135 @@ Public Class MainForm
     Private Sub Button_Delete_Item_Record_Click(sender As Object, e As EventArgs) Handles Button_Delete_Item_Record.Click
         DeleteItemView.Show()
     End Sub
+
+    Private Sub Supplier_add_supplier_Click_1(sender As Object, e As EventArgs) Handles Supplier_add_supplier.Click
+        Add_Supplier.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        UpdateSupplierView.Show()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        DeleteSupplierView.Show()
+    End Sub
+
+    Public Sub load2()
+        'Hide the last blank line.
+        DataGrid_Main_Inventory.AllowUserToAddRows = False
+
+        'Clear Columns.
+        DataGrid_Main_Inventory.Columns.Clear()
+        Dim name As DataGridViewColumn = New DataGridViewTextBoxColumn()
+        name.HeaderText = "Code"
+        name.Name = "Code"
+        name.DataPropertyName = "Code"
+        name.Width = 50
+        DataGrid_Main_Inventory.Columns.Insert(0, name)
+
+
+        Dim ProductName As DataGridViewColumn = New DataGridViewTextBoxColumn()
+        ProductName.HeaderText = "Product Name"
+        ProductName.Name = "Product Name"
+        ProductName.DataPropertyName = "ProductName"
+        ProductName.Width = 200
+        DataGrid_Main_Inventory.Columns.Insert(1, ProductName)
+
+        Dim Company_Id As DataGridViewColumn = New DataGridViewTextBoxColumn()
+        Company_Id.HeaderText = "Company ID"
+        Company_Id.Name = "CompanyID"
+        Company_Id.DataPropertyName = "Company_Id"
+        Company_Id.Width = 100
+        DataGrid_Main_Inventory.Columns.Insert(2, Company_Id)
+        DataGrid_Main_Inventory.Columns("CompanyID").ValueType = GetType(String)
+
+        Dim Item_Id As DataGridViewColumn = New DataGridViewTextBoxColumn()
+        Item_Id.HeaderText = "Item ID"
+        Item_Id.Name = "ItemID"
+        Item_Id.DataPropertyName = "Item_Id"
+        Item_Id.Width = 50
+        DataGrid_Main_Inventory.Columns.Insert(3, Item_Id)
+        DataGrid_Main_Inventory.Columns("ItemID").ValueType = GetType(String)
+        DataGrid_Main_Inventory.Columns("ItemID").DefaultCellStyle.Format = ""
+
+        Dim Quantity As DataGridViewColumn = New DataGridViewTextBoxColumn()
+        Quantity.HeaderText = "Quantity"
+        Quantity.Name = "Quantity"
+        Quantity.DataPropertyName = "Quantity"
+        Quantity.Width = 50
+        DataGrid_Main_Inventory.Columns.Insert(4, Quantity)
+
+        Dim UnitPrice As DataGridViewColumn = New DataGridViewTextBoxColumn()
+        UnitPrice.HeaderText = "Unit Price"
+        UnitPrice.Name = "UnitPrice"
+        UnitPrice.DataPropertyName = "UnitPrice"
+        UnitPrice.Width = 50
+        DataGrid_Main_Inventory.Columns.Insert(5, UnitPrice)
+        DataGrid_Main_Inventory.Columns("UnitPrice").ValueType = GetType(FormatNumber)
+        DataGrid_Main_Inventory.Columns("UnitPrice").DefaultCellStyle.Format = "N2"
+
+        Dim UnitTax As DataGridViewColumn = New DataGridViewTextBoxColumn()
+        UnitTax.HeaderText = "Unit Tax"
+        UnitTax.Name = "Unit Tax"
+        UnitTax.DataPropertyName = "UnitTax"
+        UnitTax.Width = 50
+        DataGrid_Main_Inventory.Columns.Insert(6, UnitTax)
+
+        DataGrid_Main_Inventory.DataSource = Nothing
+
+        Using Con As SQLiteConnection = New SQLiteConnection(ConnectionSTR)
+            Using cmd As SQLiteCommand = New SQLiteCommand("Select Item_Id, Code, ProductName, Company_Id, Quantity, UnitPrice, UnitTax FROM Inventory", Con)
+                cmd.CommandType = CommandType.Text
+                Using sda As SQLiteDataAdapter = New SQLiteDataAdapter(cmd)
+                    Using dt As DataTable = New DataTable()
+                        Try
+                            Con.Open()
+                            sda.Fill(dt)
+                            DataGrid_Main_Inventory.DataSource = dt
+                        Catch ex As Exception
+                        End Try
+                    End Using
+                End Using
+            End Using
+        End Using
+        Me.Refresh()
+    End Sub
+
+    Public Sub load3()
+        Using Cons As SQLiteConnection = New SQLiteConnection(ConnectionSTR)
+            Using cmds As SQLiteCommand = New SQLiteCommand("Select Company_Id, Registration, CompanyName, CompanyAddress, CompanyTelephone from Supplier", Cons)
+                cmds.CommandType = CommandType.Text
+                Using sdas As SQLiteDataAdapter = New SQLiteDataAdapter(cmds)
+                    Using dts As DataTable = New DataTable()
+                        Try
+                            Cons.Open()
+                            sdas.Fill(dts)
+                            DataGrid_Main_Supplier.DataSource = dts
+                        Catch ex As Exception
+                        End Try
+                    End Using
+                End Using
+            End Using
+        End Using
+    End Sub
+
+    Private Sub MainForm_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
+        load2()
+    End Sub
+
+    Private Sub TabControl1_Selected(sender As Object, e As TabControlEventArgs) Handles TabControl1.Selected
+        If TabControl1.SelectedTab.Name = "supplier" Then
+            load3()
+
+        End If
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.Refresh()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.Refresh()
+    End Sub
 End Class
+

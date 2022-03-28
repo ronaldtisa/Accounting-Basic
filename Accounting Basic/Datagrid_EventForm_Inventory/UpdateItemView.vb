@@ -4,26 +4,9 @@ Public Class UpdateItemView
     Dim dgv As New MainForm
     Private Const ConnectionSTR As String = "Data Source=C:\Account Basic\ACCOUNTBOOK.db"
     Private Sub UpdateItemView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        '' Dim data2 As DataTable = Load_Company_List()
-        '' ComboBox_Company_list.DataSource = data2
-        '' ComboBox_Company_list.DisplayMember = "CompanyName"
-        '' ComboBox_Company_list.ValueMember = "Company_Id"
+
     End Sub
 
-    Private Sub UpdateItemView_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        Dim dataset3 As New DataTable
-        Try
-            Using SLiteCon As New SQLiteConnection(ConnectionSTR)
-                SLiteCon.Open()
-                Dim sliteCom As New SQLiteCommand("SELECT * From Supplier where CompanyName LIKE '" + Update_item_TextBox_CompanyName.Text + "'", SLiteCon)
-                Dim dataadapt As SQLiteDataReader = sliteCom.ExecuteReader
-                While dataadapt.Read
-                    Update_Winform_TextBox_Company_ID.Text = dataadapt("Company_Id")
-                End While
-            End Using
-        Catch ex As Exception
-        End Try
-    End Sub
     Private Sub DGV_Inventory_Update_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Inventory_Update.CellContentClick
         Dim index As Integer
         index = e.RowIndex
@@ -116,7 +99,6 @@ Public Class UpdateItemView
         UnitTax.Name = " Unit Tax"
         UnitTax.DataPropertyName = "UnitTax"
         UnitTax.Width = 100
-
         DGV_Inventory_Update.Columns.Insert(6, UnitTax)
 
         DGV_Inventory_Update.DataSource = Nothing
@@ -135,10 +117,13 @@ Public Class UpdateItemView
             End With
             DGV_Inventory_Update.DataSource = dt
             con.Close()
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
+            da.Dispose()
         End Try
+
         Dim UpdateButton As DataGridViewButtonColumn = New DataGridViewButtonColumn()
         UpdateButton.HeaderText = ""
         UpdateButton.Name = " UpdateButton"

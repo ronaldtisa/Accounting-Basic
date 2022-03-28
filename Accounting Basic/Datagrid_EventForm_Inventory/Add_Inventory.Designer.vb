@@ -111,6 +111,7 @@ Partial Class Add_Inventory
         Me.TextBoxItemId.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxItemId.Location = New System.Drawing.Point(568, 41)
         Me.TextBoxItemId.Name = "TextBoxItemId"
+        Me.TextBoxItemId.ReadOnly = True
         Me.TextBoxItemId.Size = New System.Drawing.Size(152, 25)
         Me.TextBoxItemId.TabIndex = 20
         '
@@ -218,6 +219,7 @@ Partial Class Add_Inventory
         Me.TextBoxID.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBoxID.Location = New System.Drawing.Point(591, 103)
         Me.TextBoxID.Name = "TextBoxID"
+        Me.TextBoxID.ReadOnly = True
         Me.TextBoxID.Size = New System.Drawing.Size(129, 25)
         Me.TextBoxID.TabIndex = 8
         '
@@ -243,6 +245,7 @@ Partial Class Add_Inventory
         Me.TextBox_Address.Location = New System.Drawing.Point(151, 134)
         Me.TextBox_Address.Multiline = True
         Me.TextBox_Address.Name = "TextBox_Address"
+        Me.TextBox_Address.ReadOnly = True
         Me.TextBox_Address.Size = New System.Drawing.Size(569, 89)
         Me.TextBox_Address.TabIndex = 4
         '

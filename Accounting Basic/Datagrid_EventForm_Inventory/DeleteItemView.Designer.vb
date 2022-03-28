@@ -301,6 +301,7 @@ Partial Class DeleteItemView
         '
         'ComboBox2
         '
+        Me.ComboBox2.Enabled = False
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(6, 13)
         Me.ComboBox2.Name = "ComboBox2"
@@ -319,6 +320,7 @@ Partial Class DeleteItemView
         '
         'inventory_delete_search_ItemName
         '
+        Me.inventory_delete_search_ItemName.AcceptsReturn = True
         Me.inventory_delete_search_ItemName.Location = New System.Drawing.Point(6, 13)
         Me.inventory_delete_search_ItemName.Name = "inventory_delete_search_ItemName"
         Me.inventory_delete_search_ItemName.Size = New System.Drawing.Size(339, 23)
@@ -336,6 +338,7 @@ Partial Class DeleteItemView
         '
         'inventory_delete_search_ItemCode
         '
+        Me.inventory_delete_search_ItemCode.AcceptsReturn = True
         Me.inventory_delete_search_ItemCode.Location = New System.Drawing.Point(6, 15)
         Me.inventory_delete_search_ItemCode.Name = "inventory_delete_search_ItemCode"
         Me.inventory_delete_search_ItemCode.Size = New System.Drawing.Size(259, 23)

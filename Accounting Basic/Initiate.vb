@@ -1,12 +1,9 @@
 ﻿Imports System.Data.SQLite
-Imports System.IO
-Imports System.Windows
-Imports Accounting_Basic
 Public Class Initiate
 
     Private Const tblsupplier As String = "Create table 'Supplier'( 'Company_Id' INT,'Registration' NCHAR, 'CompanyName' NCHAR, 'CompanyAddress' NCHAR, 'CompanyTelephone' NCHAR, 'CashFLOW' NUM, PRIMARY KEY( Company_Id, CompanyName ));"
     Private Const tblsales As String = "Create table 'Sales'( 'Id_Receipt' INT, 'Date' NUM, 'Item_Id' NCHAR, PRIMARY KEY( Id_Receipt ));"
-    Private Const createInventory As String = "CREATE TABLE 'Inventory'( 'Item_Id' INT, 'Code' NCHAR, 'ProductName' NCHAR,'Company_Id' NCHAR, 'Address' NCHAR, 'Telephone' NCHAR, 'Quantity' NCHAR NULL, 'UnitPrice'NUM NULL, 'UnitTax' NUM NULL, PRIMARY KEY( Item_Id ));"
+    Private Const createInventory As String = "CREATE TABLE 'Inventory'( 'Item_Id' INT, 'Code' NCHAR, 'ProductName' NCHAR,'Company_Id' NCHAR, 'Quantity' NCHAR NULL, 'UnitPrice'NUM NULL, 'UnitTax' NUM NULL, PRIMARY KEY( Item_Id ));"
     Private Const tblManagement As String = "Create table 'Management' ( 'Id_UserName' NCHAR, 'ContactNumber' NCHAR, 'Address' NCHAR, 'Duty' NCHAR, PRIMARY KEY ( Id_UserName ));"
     Private Const Login As String = "Create table 'Security' ('Log_Id' INT, 'Name' NCHAR, 'Password' NCHAR, Primary Key(Log_Id))"
     Private Const Company As String = "Create table 'MyCompany'('MyCompany_Id' Int, 'CompanyName' Nchar, 'CompanyRegistration' NChar, 'CompanyAddress' Nchar, 'CompanyTelephone' Nchar, 'Tax' NCHAR, 'Currency' NCHAR, Primary Key( MyCompany_Id ) )"
