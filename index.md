@@ -1,36 +1,33 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/ronaldtisa/Accounting-Basic/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Welcome to Accounting Basic
+Passion, determined to learn how to code, I take down the difficult challenge and as it turn out it was a bad idea. But as time goes on,
+It start to gain fruition, little by little.
+>
+>### Release list (Major Release)
+>
 
 ```markdown
-Syntax highlighted code block
+>## no release yet to be published
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
+>
+>### Release list (beta Release)
+>Codename :
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
+>```markdown ### Mirage
+## Mirage V1.0.1 [Beta download V1.0.1 ](https://github.com/ronaldtisa/Accounting-Basic/releases/tag/beta1)
+_Function Avaiable_
+- add item
+- delete item
+- update item detail
+- add supplier
+- delete supplier
+- update supplier detail
+- company name record
+>```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ronaldtisa/Accounting-Basic/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+
+For more details see [README.md](https://github.com/ronaldtisa/Accounting-Basic/blob/master/README.md)
 
 ### Support or Contact
 
