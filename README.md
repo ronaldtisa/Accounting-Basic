@@ -44,4 +44,7 @@ Welcome to the Accounting-Basic
 ## Release
 ***
 Here is the first release : [Beta download V1.0.1 ](https://github.com/ronaldtisa/Accounting-Basic/releases/tag/beta1)
+> Download exe and run as admin to install.
+> It will start when the computer start. If you want to disable it from running when the computer start,
+> just head to task manager and disable through startup apps.
 
