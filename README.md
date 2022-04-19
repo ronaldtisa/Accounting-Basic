@@ -43,5 +43,5 @@ Welcome to the Accounting-Basic
 > >
 ## Release
 ***
-Here is the first release codename  : Mirage [Beta download V1.0.1 ](https://github.com/ronaldtisa/Accounting-Basic/releases/tag/beta1)
+Here is the first release : [Beta download V1.0.1 ](https://github.com/ronaldtisa/Accounting-Basic/releases/tag/beta1)
 
